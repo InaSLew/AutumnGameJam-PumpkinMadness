@@ -7,6 +7,7 @@ public class PlayerMovement : MonoBehaviour
 {
     public PlayerController playerController;
     public double walkSpeed = 40f;
+    public double runMultiplier = 1.5f;
     double moveLeftRight = 0f;
     bool jump = false;
     bool crouch = false;
@@ -32,12 +33,12 @@ public class PlayerMovement : MonoBehaviour
 
         if (Input.GetKeyDown("left shift"))
         {
-            walkSpeed = walkSpeed * 1.5f;
+            walkSpeed = walkSpeed * runMultiplier;
         }
         
         else if (Input.GetKeyUp("left shift"))
         {
-            walkSpeed = walkSpeed / 1.5f;
+            walkSpeed = walkSpeed / runMultiplier;
         }
     }
 
