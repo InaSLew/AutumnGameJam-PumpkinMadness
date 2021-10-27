@@ -11,6 +11,7 @@ public class Player : MonoBehaviour
     private bool isInvincible = false; 
     [SerializeField] private float invincibilityDurationSeconds;
     [SerializeField] private float invincibilityDeltaTime;
+    [SerializeField] private GameObject model;
 
     public HealthBarID HealthBarID;
     // Start is called before the first frame update
@@ -71,6 +72,10 @@ public class Player : MonoBehaviour
 
         Debug.Log("Player is no longer invincible!");
         isInvincible = false;
+    }
+    private void ScaleModelTo(Vector3 scale)
+    {
+        model.transform.localScale = scale;
     }
     
     
