@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 332793199456680687}
   - component: {fileID: 332793199456680672}
   - component: {fileID: 8924721309400034330}
+  - component: {fileID: 2850826354901196564}
   m_Layer: 0
   m_Name: Flying_Weak_Enemy
   m_TagString: Enemy
@@ -125,6 +126,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5d4194d75b73a7d4899a667b46f85cea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!70 &2850826354901196564
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 332793199456680674}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_Size: {x: 1, y: 0.7}
+  m_Direction: 1
 --- !u!1001 &332793198896960276
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -132,10 +149,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 332793199456680673}
     m_Modifications:
-    - target: {fileID: -7374225222971373074, guid: eb06f71367cd44e46b6fd5df06aabdfb, type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 1504458423592416594, guid: eb06f71367cd44e46b6fd5df06aabdfb, type: 3}
       propertyPath: m_Name
       value: Flying_Weak_EnemyGFX
@@ -143,10 +156,6 @@ PrefabInstance:
     - target: {fileID: 1504458423592416594, guid: eb06f71367cd44e46b6fd5df06aabdfb, type: 3}
       propertyPath: m_TagString
       value: Untagged
-      objectReference: {fileID: 0}
-    - target: {fileID: 3789309141243859926, guid: eb06f71367cd44e46b6fd5df06aabdfb, type: 3}
-      propertyPath: m_GravityScale
-      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8762915576377608824, guid: eb06f71367cd44e46b6fd5df06aabdfb, type: 3}
       propertyPath: m_RootOrder
@@ -192,8 +201,7 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: -7374225222971373074, guid: eb06f71367cd44e46b6fd5df06aabdfb, type: 3}
+    m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: eb06f71367cd44e46b6fd5df06aabdfb, type: 3}
 --- !u!4 &9007886378059618668 stripped
 Transform:
