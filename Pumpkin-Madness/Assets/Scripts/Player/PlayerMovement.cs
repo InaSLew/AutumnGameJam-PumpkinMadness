@@ -31,7 +31,7 @@ public class PlayerMovement : MonoBehaviour
         
         moveLeftRight = Input.GetAxisRaw("Horizontal") * walkSpeed;
 
-        if (Input.GetKeyDown("left shift"))
+        if (Input.GetKeyDown("left shift") && (crouch !=true))
         {
             walkSpeed = walkSpeed * runMultiplier;
         }
