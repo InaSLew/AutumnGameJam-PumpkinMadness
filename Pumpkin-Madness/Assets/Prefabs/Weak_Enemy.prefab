@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 9010964018787262878}
   - component: {fileID: -7374225222971373074}
   - component: {fileID: 3789309141243859926}
-  - component: {fileID: 2187035380351443957}
+  - component: {fileID: 1677826555559362861}
   m_Layer: 0
   m_Name: Weak_Enemy
   m_TagString: Enemy
@@ -120,7 +120,7 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!70 &2187035380351443957
+--- !u!70 &1677826555559362861
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -135,4 +135,4 @@ CapsuleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   m_Size: {x: 1, y: 1}
-  m_Direction: 1
+  m_Direction: 0
