@@ -563,6 +563,8 @@ GameObject:
   m_Component:
   - component: {fileID: 333722421}
   - component: {fileID: 333722422}
+  - component: {fileID: 333722423}
+  - component: {fileID: 333722424}
   m_Layer: 0
   m_Name: GameController
   m_TagString: GameController
@@ -599,6 +601,32 @@ MonoBehaviour:
   EnemyPrefabs:
   - {fileID: 332793199456680674, guid: a48659bb504cf12469611e575bf109d1, type: 3}
   - {fileID: 332793199456680674, guid: a48659bb504cf12469611e575bf109d1, type: 3}
+--- !u!114 &333722423
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 333722420}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a15d3fc10c8647c40a42f88d863d409e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &333722424
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 333722420}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 135d3d13001abc947a610cc15c17fc81, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  shouldSpawn: 0
+  enemyPrefab: {fileID: 993696152925379693, guid: eb06f71367cd44e46b6fd5df06aabdfb, type: 3}
 --- !u!1001 &362855857
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -816,7 +844,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 2}
+    oldSize: {x: 1, y: 1}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -887,7 +915,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 118c690bf739ae74391fac622e5bdaae, type: 3}
+  m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -928,10 +956,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 100
   currentHealth: 0
-  invincibilityDurationSeconds: 4
+  invincibilityDurationSeconds: 3
   HealthBarID: {fileID: 942604434}
-  Transparen: {fileID: 21300000, guid: c31d72f68e65e8b469b86221c39dcf7b, type: 3}
-  NotTransparent: {fileID: 21300000, guid: 118c690bf739ae74391fac622e5bdaae, type: 3}
 --- !u!1 &499914930
 GameObject:
   m_ObjectHideFlags: 0
@@ -3193,6 +3219,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: PumpWall (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 3412644698393596181, guid: b587fa4a7a8cd8d498e0be7380e08e22, type: 3}
+      propertyPath: m_TagString
+      value: SpawnWall
+      objectReference: {fileID: 0}
     - target: {fileID: 6648137551223426347, guid: b587fa4a7a8cd8d498e0be7380e08e22, type: 3}
       propertyPath: m_RootOrder
       value: 13
@@ -3430,6 +3460,10 @@ PrefabInstance:
     - target: {fileID: 3412644698393596181, guid: b587fa4a7a8cd8d498e0be7380e08e22, type: 3}
       propertyPath: m_Name
       value: PumpWall
+      objectReference: {fileID: 0}
+    - target: {fileID: 3412644698393596181, guid: b587fa4a7a8cd8d498e0be7380e08e22, type: 3}
+      propertyPath: m_TagString
+      value: SpawnWall
       objectReference: {fileID: 0}
     - target: {fileID: 6648137551223426347, guid: b587fa4a7a8cd8d498e0be7380e08e22, type: 3}
       propertyPath: m_RootOrder

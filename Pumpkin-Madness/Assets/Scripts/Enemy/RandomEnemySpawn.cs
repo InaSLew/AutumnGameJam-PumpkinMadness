@@ -37,7 +37,9 @@ public class RandomEnemySpawn : MonoBehaviour
     private Vector3 GetRandomSpawnPosition()
     {
         var targetWall = spawnWalls[Random.Range(0, 1)];
-        var y = Random.Range(0, targetWall.GetComponent<SpriteRenderer>().bounds.size.y);
-        return new Vector3(targetWall.transform.position.x, y, 0);
+        var targetBound = targetWall.GetComponent<SpriteRenderer>().bounds;
+        var positionX = targetBound.size.x;
+        var y = Random.Range(0, targetBound.size.y);
+        return new Vector3(positionX, y, 0);
     }
 }
