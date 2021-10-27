@@ -6,8 +6,6 @@ using Random = System.Random;
 
 public class GameController : MonoBehaviour
 {
-    public Random random = new Random();
-
     private RandomEnemySpawn randomEnemySpawn;
 
     private void Awake()
@@ -17,6 +15,6 @@ public class GameController : MonoBehaviour
 
     private void Update()
     {
-        throw new NotImplementedException();
+        randomEnemySpawn.SpawnEnemies(true);
     }
 }
