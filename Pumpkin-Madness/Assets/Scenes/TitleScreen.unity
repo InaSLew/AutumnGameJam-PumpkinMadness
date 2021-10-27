@@ -134,7 +134,7 @@ GameObject:
   - component: {fileID: 754537518}
   - component: {fileID: 754537517}
   m_Layer: 0
-  m_Name: Square
+  m_Name: Black
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -682,7 +682,7 @@ MonoBehaviour:
     m_Bits: 183
   m_GroundCheck: {fileID: 1116422490}
   m_CeilingCheck: {fileID: 1009979930}
-  m_CrouchDisableCollider: {fileID: 0}
+  m_CrouchDisableCollider: {fileID: 1516247302}
   OnLandEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -965,7 +965,7 @@ GameObject:
   - component: {fileID: 1730144618}
   - component: {fileID: 1730144617}
   m_Layer: 0
-  m_Name: Pumpkin Daddy v3
+  m_Name: Pumpkin Daddy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

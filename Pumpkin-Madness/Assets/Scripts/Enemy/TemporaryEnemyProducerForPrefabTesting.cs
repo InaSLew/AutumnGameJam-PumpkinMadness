@@ -4,14 +4,14 @@ using UnityEngine;
 
 public class TemporaryEnemyProducerForPrefabTesting : MonoBehaviour
 {
-    public GameObject Weak_EnemyPrefab;
+    public GameObject[] EnemyPrefabs;
     
     
     // Start is called before the first frame update
     void Start()
     {
-        Instantiate(Weak_EnemyPrefab).transform.position = new Vector3(2f, -2f, 0f);
-        Instantiate(Weak_EnemyPrefab).transform.position = new Vector3(2f, 3f, 0f);
+        Instantiate(EnemyPrefabs[0]).transform.position = new Vector3(2f, -2f, 0f);
+        Instantiate(EnemyPrefabs[1]).transform.position = new Vector3(2f, 3f, 0f);
     }
 
     // Update is called once per frame
