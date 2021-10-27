@@ -15,13 +15,8 @@ public class Enemy : Unit
         player = GameObject.FindGameObjectWithTag("Player");
         
         // Make the player the target for the ai.
-        gameObject.GetComponent<AIDestinationSetter>().target = player.transform;
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        if (TryGetComponent(out AIDestinationSetter destinationSetter))
+            destinationSetter.target = player.transform;
     }
 
     private void OnTriggerEnter2D(Collider2D other)

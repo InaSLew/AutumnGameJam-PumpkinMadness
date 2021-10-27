@@ -563,6 +563,8 @@ GameObject:
   m_Component:
   - component: {fileID: 333722421}
   - component: {fileID: 333722422}
+  - component: {fileID: 333722423}
+  - component: {fileID: 333722424}
   m_Layer: 0
   m_Name: GameController
   m_TagString: GameController
@@ -598,7 +600,33 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   EnemyPrefabs:
   - {fileID: 332793199456680674, guid: a48659bb504cf12469611e575bf109d1, type: 3}
-  - {fileID: 7147703560884468701, guid: eb06f71367cd44e46b6fd5df06aabdfb, type: 3}
+  - {fileID: 332793199456680674, guid: a48659bb504cf12469611e575bf109d1, type: 3}
+--- !u!114 &333722423
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 333722420}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a15d3fc10c8647c40a42f88d863d409e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &333722424
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 333722420}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 135d3d13001abc947a610cc15c17fc81, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  shouldSpawn: 0
+  enemyPrefab: {fileID: 993696152925379693, guid: eb06f71367cd44e46b6fd5df06aabdfb, type: 3}
 --- !u!1001 &362855857
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3191,6 +3219,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: PumpWall (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 3412644698393596181, guid: b587fa4a7a8cd8d498e0be7380e08e22, type: 3}
+      propertyPath: m_TagString
+      value: SpawnWall
+      objectReference: {fileID: 0}
     - target: {fileID: 6648137551223426347, guid: b587fa4a7a8cd8d498e0be7380e08e22, type: 3}
       propertyPath: m_RootOrder
       value: 13
@@ -3428,6 +3460,10 @@ PrefabInstance:
     - target: {fileID: 3412644698393596181, guid: b587fa4a7a8cd8d498e0be7380e08e22, type: 3}
       propertyPath: m_Name
       value: PumpWall
+      objectReference: {fileID: 0}
+    - target: {fileID: 3412644698393596181, guid: b587fa4a7a8cd8d498e0be7380e08e22, type: 3}
+      propertyPath: m_TagString
+      value: SpawnWall
       objectReference: {fileID: 0}
     - target: {fileID: 6648137551223426347, guid: b587fa4a7a8cd8d498e0be7380e08e22, type: 3}
       propertyPath: m_RootOrder

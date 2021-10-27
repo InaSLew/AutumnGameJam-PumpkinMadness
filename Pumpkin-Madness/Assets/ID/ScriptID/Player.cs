@@ -12,7 +12,9 @@ public class Player : MonoBehaviour
     [SerializeField] private float invincibilityDurationSeconds;
     // [SerializeField] private float invincibilityDeltaTime;
     public HealthBarID HealthBarID;
-    
+    public Sprite Transparen;
+    private SpriteRenderer spriteRenderer;
+    public Sprite NotTransparent;
     
     
     
@@ -21,6 +23,7 @@ public class Player : MonoBehaviour
     {
         currentHealth = maxHealth;
         HealthBarID.SetMaxHealth(maxHealth);
+        spriteRenderer = GetComponentInChildren<SpriteRenderer>();
     }
     
     
@@ -72,22 +75,21 @@ public class Player : MonoBehaviour
             //     Debug.Log("two");
             // }
 
-            if (temp == 4)
+            if (temp == 2)
             {
                 temp = 0;
-                ScaleModelTo(Vector3.zero);
+                spriteRenderer.sprite = NotTransparent;
             }
             else
             {
                 temp++;
-                ScaleModelTo(Vector3.one);
+                spriteRenderer.sprite = Transparen;
             }
-            
-            yield return new WaitForSeconds(0.5f);
+            yield return new WaitForSeconds(0.2f);
         }
-    
+
+        spriteRenderer.sprite = NotTransparent;
         Debug.Log("Player is no longer invincible!");
-        ScaleModelTo(Vector3.one);
         isInvincible = false;
     }
     

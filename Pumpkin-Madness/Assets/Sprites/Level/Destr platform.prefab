@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 556860416612358324}
   - component: {fileID: 556860416612358322}
-  - component: {fileID: 556860416612358325}
+  - component: {fileID: 5833934155858094596}
   m_Layer: 3
   m_Name: Destr platform
   m_TagString: Untagged
@@ -84,7 +84,7 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!61 &556860416612358325
+--- !u!61 &5833934155858094596
 BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -97,16 +97,16 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0.2307404}
+  m_Offset: {x: 0, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 3.78, y: 0.81}
+    oldSize: {x: 3.78, y: 0.43}
     newSize: {x: 3.78, y: 0.81}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 3.78, y: 0.34851927}
+  m_Size: {x: 3.78, y: 0.43}
   m_EdgeRadius: 0
