@@ -6,7 +6,7 @@ using UnityEngine;
 
 public class Enemy : Unit
 {
-    public Enemy() : base(1, 1) {}
+    public Enemy() : base(1, 10) {}
 
     private GameObject player;
     
@@ -30,6 +30,7 @@ public class Enemy : Unit
         {
             // Deal damage to player.
             // player.dealdamage(damagePower);
+            player.GetComponent<Player>().TakeDamage(DamagePower);
         }
     }
 }
