@@ -31,18 +31,20 @@ public class Player : MonoBehaviour
         // }
     }
 
-    private void OnCollisionEnter2D(Collision2D other)
-    {
-        // Enemy = GameObject.FindWithTag("Enemy").GetComponent<PolygonCollider2D>().isTrigger.Equals();
-        if (other.gameObject.CompareTag("Enemy"))
-        {
-            TakeDamage(20);
-            
-        }
-    }
+    // private void OnCollisionEnter2D(Collision2D other)
+    // {
+    //     // Enemy = GameObject.FindWithTag("Enemy").GetComponent<PolygonCollider2D>().isTrigger.Equals();
+    //     if (other.gameObject.CompareTag("Enemy"))
+    //     {
+    //         TakeDamage(20);
+    //         
+    //     }
+    // }
 
     public void TakeDamage(int damage)
     {
+        Debug.Log($"Player lost {damage} health!");
+        
         if(isInvincible) return;
         currentHealth -= damage;
         HealthBarID.SetHealth(currentHealth);
@@ -50,7 +52,8 @@ public class Player : MonoBehaviour
         {
             Destroy(gameObject);
         }
-        StartCoroutine(BecomeTemporarilyInvincible());
+        // StartCoroutine(BecomeTemporarilyInvincible());
+        MethodThatTriggersInvulnerability();
     }
     void MethodThatTriggersInvulnerability()
     {
@@ -63,7 +66,7 @@ public class Player : MonoBehaviour
     {
         Debug.Log("Player turned invincible!");
         isInvincible = true;
-
+    
         for (float i = 0; i < invincibilityDurationSeconds; i += invincibilityDeltaTime)
         {
             // Alternate between 0 and 1 scale to simulate flashing
@@ -77,7 +80,7 @@ public class Player : MonoBehaviour
             }
             yield return new WaitForSeconds(invincibilityDeltaTime);
         }
-
+    
         Debug.Log("Player is no longer invincible!");
         ScaleModelTo(Vector3.one);
         isInvincible = false;

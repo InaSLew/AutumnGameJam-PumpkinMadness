@@ -30,6 +30,7 @@ public class Enemy : Unit
         {
             // Deal damage to player.
             // player.dealdamage(damagePower);
+            player.GetComponent<Player>().TakeDamage(DamagePower);
         }
     }
 }
