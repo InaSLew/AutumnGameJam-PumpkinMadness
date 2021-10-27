@@ -8,6 +8,9 @@ public class Player : MonoBehaviour
     public int maxHealth = 100;
     public int currentHealth;
     private bool Enemy;
+    private bool isInvincible = false; 
+    [SerializeField] private float invincibilityDurationSeconds;
+    [SerializeField] private float invincibilityDeltaTime;
 
     public HealthBarID HealthBarID;
     // Start is called before the first frame update
@@ -33,17 +36,42 @@ public class Player : MonoBehaviour
         if (other.gameObject.CompareTag("Enemy"))
         {
             TakeDamage(20);
+            
         }
     }
 
     void TakeDamage(int damage)
     {
+        if(isInvincible) return;
         currentHealth -= damage;
         HealthBarID.SetHealth(currentHealth);
         if (currentHealth<=0)
         {
             Destroy(gameObject);
         }
+        StartCoroutine(BecomeTemporarilyInvincible());
     }
+    void MethodThatTriggersInvulnerability()
+    {
+        if (!isInvincible)
+        {
+            StartCoroutine(BecomeTemporarilyInvincible());
+        }
+    }
+    private IEnumerator BecomeTemporarilyInvincible()
+    {
+        Debug.Log("Player turned invincible!");
+        isInvincible = true;
+
+        for (float i = 0; i < invincibilityDurationSeconds; i += invincibilityDeltaTime)
+        {
+            // TODO: add any logic we want here
+            yield return new WaitForSeconds(invincibilityDeltaTime);
+        }
+
+        Debug.Log("Player is no longer invincible!");
+        isInvincible = false;
+    }
+    
     
 }
