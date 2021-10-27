@@ -591,12 +591,14 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 333722420}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ae1ba0306fc81aa49ba8c9b62ae5d70c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Weak_EnemyPrefab: {fileID: 332793199456680674, guid: a48659bb504cf12469611e575bf109d1, type: 3}
+  EnemyPrefabs:
+  - {fileID: 332793199456680674, guid: a48659bb504cf12469611e575bf109d1, type: 3}
+  - {fileID: 332793199456680674, guid: a48659bb504cf12469611e575bf109d1, type: 3}
 --- !u!1001 &362855857
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -864,7 +866,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: f46de6585fe9ec94ba6b80a7602b4fe7, type: 2}
+  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -927,8 +929,6 @@ MonoBehaviour:
   maxHealth: 100
   currentHealth: 0
   invincibilityDurationSeconds: 3
-  invincibilityDeltaTime: 0
-  model: {fileID: 0}
   HealthBarID: {fileID: 942604434}
 --- !u!1 &499914930
 GameObject:
@@ -2949,7 +2949,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   version: 1
   data:
-    dataString: UEsDBBQAAAgIAAAIIey+tnIDWwIAAP0EAAALACQAZ3JhcGgwLmpzb24KACAAAAAAAAEAGAAAgD7V3rGdAQCAPtXesZ0BAIA+1d6xnQFlVE1z2jAQ/SuMziVjEyeY3lqHkB7yMaWdXHzZ2GusQUgefQRIhv/elWyw454Q+97uvrda+ZNxaRosrNIrzctHVSL7PmH+zL5NevABD7BRcs0/8Mx55aWtPQkC5zdYrige+zSjdmg1L37IjfDkiIJO8krp3bLcYKaMNRSuQBgkSCvrsyWFPifsQD/ThU850mk296cPOi2iyYmOBUqLuqdeX0Xz5DpJknQ5jeZd1jmnTXGyELBrsPT6+8w47dhxS5PkrGN4F4USgptOFrPHJtjOoDGOTBGh5EA2gxbPr5FvauslD5Ofq8qg7SRpON5xTdNqq7Kfqh3hDsy21fUOwvk+aVDUlnz8D53GAa602j2cu8aR72BrXmx/w7EAYwcTHobvvsp2cg9iC28CX2uUT2qllZMlgVY7n+oMzu76vxdjWY3Fto+3UkdB1/TTjkZX4z2cgvdDJvjuzUNXSRtYCxWmHbYANd3LLxIcdsR0JSjqVfw1+Ac2w2XqgHuujSWocym9vDfltKeyZZiZd+NsprTEEO5ENyhB2OMLlbHjCxxhg7Yj5B78s+mad9j5NYxSQrjnR9EIelH7y2WZWu0f0dTPzgousRftgSeaU6akbPdrOJNz2trpCopB2sbx8utqsZs5pOkimS3gtori25sppLdxmsZlMsMUrqFgYfe4JJ8gXlqh3Xjo1mRfXNKenb8mk5WGJux6qWG/4h87NRg5l5VaFxpRPrcVLsJRUxN6k+Wy5DSgNVrLZbhv9pkzoYotlvmlUB6cLg9WQ95XyVnD35X1kZxl4fORsxM7/QNQSwMEFAAACAgAAAgh7NLoyRptAAAAeAAAAAkAJABtZXRhLmpzb24KACAAAAAAAAEAGAAAgD7V3rGdAQCAPtXesZ0BAIA+1d6xnQGrVipLLSrOzM9TslIw0TPSMzTVUVBKL0osyCgGihiCOKWZKSB2tJKpeaKFhaWJkWWiWZqBoZmpbqKFmaGFhWGKiVGqRaJxYrJSLFB9SWVBql9ibipET0BiSUZaZl5KZl66nntRZoo7yGil2FoAUEsBAi0AFAAACAgAAAgh7L62cgNbAgAA/QQAAAsAJAAAAAAAAAAAAAAAAAAAAGdyYXBoMC5qc29uCgAgAAAAAAABABgAAIA+1d6xnQEAgD7V3rGdAQCAPtXesZ0BUEsBAi0AFAAACAgAAAgh7NLoyRptAAAAeAAAAAkAJAAAAAAAAAAAAAAAqAIAAG1ldGEuanNvbgoAIAAAAAAAAQAYAACAPtXesZ0BAIA+1d6xnQEAgD7V3rGdAVBLBQYAAAAAAgACALgAAABgAwAAAAA=
+    dataString: UEsDBBQAAAgIAAAIIeyBKRRCagIAABAFAAALACQAZ3JhcGgwLmpzb24KACAAAAAAAAEAGAAAgD7V3rGdAQCAPtXesZ0BAIA+1d6xnQFlVMty4jAQ/BVK54WyeRizt12HkD2QpEK2cvFFscdYhSy59AiQFP++I9nGDntCTM+juzXyF2FC15AZqTaK5VuZA/k5Iu5Mfox68AFOdC/Fjn1Cl/PGclO6JOpzXqhhEuOhK9OyAqNY9kvsuUsOMGgFK6Sq1vkeEqmNxnBBuQaElDSuWmDoa0RO+DNeuZIznqZLd/rE0yoYXfCYgTCgBqnhZBUsZ/M4mq3HQdSWrSbzWTSbztracBLFmLN0Gb6LFRmnVQ25k9Q3W3Rjw9inCRTbZjhhmeSc6ZYpMefaO5HQWlvUiQk5o6jc03P5JbB9aZyKYfFTUWgwrS2Knu+YQgObruS3bFytqD40vD4ot25Ow6hpuf0PHYceLpSsHrqpYeAmmJJlhxd6zqg2A9OH4bvvtK04Un6g7xzeShCPcqOkFTmCRllXajVM7/q/V2FJCdmhjzdUb4K27t3uzO5u2Gm4eO2nhLPq3UGTeRPYcend9osBCu/lDxL2a6PbFhh1LP5qeKX74X61wD1T2iDUqhSO3ru0yqWStffMqbEmkUqAD7ekaxCUm/MztjG3F3iDDcbeIPfUvaR2eIt1D+SmxIf7/CC4gZ7l8XpZupTHLejyyRrOBPSkHfCIPiVSiGa/hp50ZTurCpoNyvaW5d9XiyyWNI5X8+mKRkUQRosxjaMwjsN8PoWYzmhG/O4xgTopf26ItvbgrYm+ucA96z4wo42itd/1XNHjhn1WcmA5E4XcZQpAPDUdrsRB4RB8k/k6Z2jQDoxhwt83+UoJl9kB8vTaKPVK1yejaNp3SUnNPqRxkZQk/ouSkgu5/ANQSwMEFAAACAgAAAgh7NLoyRptAAAAeAAAAAkAJABtZXRhLmpzb24KACAAAAAAAAEAGAAAgD7V3rGdAQCAPtXesZ0BAIA+1d6xnQGrVipLLSrOzM9TslIw0TPSMzTVUVBKL0osyCgGihiCOKWZKSB2tJKpeaKFhaWJkWWiWZqBoZmpbqKFmaGFhWGKiVGqRaJxYrJSLFB9SWVBql9ibipET0BiSUZaZl5KZl66nntRZoo7yGil2FoAUEsBAi0AFAAACAgAAAgh7IEpFEJqAgAAEAUAAAsAJAAAAAAAAAAAAAAAAAAAAGdyYXBoMC5qc29uCgAgAAAAAAABABgAAIA+1d6xnQEAgD7V3rGdAQCAPtXesZ0BUEsBAi0AFAAACAgAAAgh7NLoyRptAAAAeAAAAAkAJAAAAAAAAAAAAAAAtwIAAG1ldGEuanNvbgoAIAAAAAAAAQAYAACAPtXesZ0BAIA+1d6xnQEAgD7V3rGdAVBLBQYAAAAAAgACALgAAABvAwAAAAA=
     upgradeData: 
     file_cachedStartup: {fileID: 0}
     data_cachedStartup: 
@@ -2998,7 +2998,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2000293311}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: -0.06, z: 0}
   m_LocalScale: {x: 4.4, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
