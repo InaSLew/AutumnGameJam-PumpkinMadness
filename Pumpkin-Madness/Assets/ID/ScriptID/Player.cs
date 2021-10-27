@@ -11,6 +11,7 @@ public class Player : MonoBehaviour
     private bool isInvincible = false; 
     [SerializeField] private float invincibilityDurationSeconds;
     [SerializeField] private float invincibilityDeltaTime;
+    [SerializeField] private GameObject model;
 
     public HealthBarID HealthBarID;
     // Start is called before the first frame update
