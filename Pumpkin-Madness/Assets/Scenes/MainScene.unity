@@ -312,9 +312,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 680b5878fa29c7441ab511a29d748c85, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerController: {fileID: 0}
+  playerController: {fileID: 454136420}
   walkSpeed: 50
-  jump: 0
 --- !u!114 &454136420
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -352,7 +351,7 @@ CircleCollider2D:
   m_GameObject: {fileID: 454136418}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: a4f8513eae3f8514caf5a8c387aa3bc4, type: 2}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
@@ -368,7 +367,7 @@ BoxCollider2D:
   m_GameObject: {fileID: 454136418}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: a4f8513eae3f8514caf5a8c387aa3bc4, type: 2}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
@@ -489,6 +488,7 @@ MonoBehaviour:
   maxHealth: 100
   currentHealth: 0
   invincibilityDurationSeconds: 3
+  invincibilityDeltaTime: 0
   HealthBarID: {fileID: 942604434}
 --- !u!1 &519420028
 GameObject:
