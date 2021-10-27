@@ -6,7 +6,7 @@ using UnityEngine;
 
 public class Enemy : Unit
 {
-    public Enemy() : base(1, 1) {}
+    public Enemy() : base(1, 10) {}
 
     private GameObject player;
     
