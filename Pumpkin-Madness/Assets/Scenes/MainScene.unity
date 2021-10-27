@@ -312,14 +312,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 680b5878fa29c7441ab511a29d748c85, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-<<<<<<< Updated upstream
-  playerController: {fileID: 454136420}
-  walkSpeed: 50
-=======
   playerController: {fileID: 0}
   walkSpeed: 50
   jump: 0
->>>>>>> Stashed changes
 --- !u!114 &454136420
 MonoBehaviour:
   m_ObjectHideFlags: 0
