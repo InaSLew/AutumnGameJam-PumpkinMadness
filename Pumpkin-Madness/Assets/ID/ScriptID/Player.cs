@@ -73,6 +73,10 @@ public class Player : MonoBehaviour
         Debug.Log("Player is no longer invincible!");
         isInvincible = false;
     }
+    private void ScaleModelTo(Vector3 scale)
+    {
+        model.transform.localScale = scale;
+    }
     
     
 }
