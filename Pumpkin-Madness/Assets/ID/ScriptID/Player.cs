@@ -12,7 +12,9 @@ public class Player : MonoBehaviour
     [SerializeField] private float invincibilityDurationSeconds;
     // [SerializeField] private float invincibilityDeltaTime;
     public HealthBarID HealthBarID;
-    
+    public Sprite Transparen;
+    private SpriteRenderer spriteRenderer;
+    public Sprite NotTransparent;
     
     
     
@@ -21,6 +23,7 @@ public class Player : MonoBehaviour
     {
         currentHealth = maxHealth;
         HealthBarID.SetMaxHealth(maxHealth);
+        spriteRenderer = GetComponentInChildren<SpriteRenderer>();
     }
     
     
@@ -58,7 +61,7 @@ public class Player : MonoBehaviour
         isInvincible = true;
 
         var temp = 0;
-        for (float i = 0; i < invincibilityDurationSeconds; i += 0.2f)
+        for (float i = 0; i < invincibilityDurationSeconds; i += 0.4f)
         {
             // // Alternate between 0 and 1 scale to simulate flashing
             // if (gameObject.transform.localScale == Vector3.one)
@@ -75,19 +78,18 @@ public class Player : MonoBehaviour
             if (temp == 4)
             {
                 temp = 0;
-                ScaleModelTo(Vector3.zero);
+                spriteRenderer.sprite = NotTransparent;
             }
             else
             {
                 temp++;
-                ScaleModelTo(Vector3.one);
+                spriteRenderer.sprite = Transparen;
             }
-            
             yield return new WaitForSeconds(0.5f);
         }
-    
+
+        spriteRenderer.sprite = NotTransparent;
         Debug.Log("Player is no longer invincible!");
-        ScaleModelTo(Vector3.one);
         isInvincible = false;
     }
     
