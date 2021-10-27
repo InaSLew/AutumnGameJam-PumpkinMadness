@@ -61,7 +61,7 @@ public class Player : MonoBehaviour
         isInvincible = true;
 
         var temp = 0;
-        for (float i = 0; i < invincibilityDurationSeconds; i += 0.4f)
+        for (float i = 0; i < invincibilityDurationSeconds; i += 0.2f)
         {
             // // Alternate between 0 and 1 scale to simulate flashing
             // if (gameObject.transform.localScale == Vector3.one)
@@ -75,7 +75,7 @@ public class Player : MonoBehaviour
             //     Debug.Log("two");
             // }
 
-            if (temp == 4)
+            if (temp == 2)
             {
                 temp = 0;
                 spriteRenderer.sprite = NotTransparent;
@@ -85,7 +85,7 @@ public class Player : MonoBehaviour
                 temp++;
                 spriteRenderer.sprite = Transparen;
             }
-            yield return new WaitForSeconds(0.5f);
+            yield return new WaitForSeconds(0.2f);
         }
 
         spriteRenderer.sprite = NotTransparent;

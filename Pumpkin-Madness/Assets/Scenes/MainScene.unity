@@ -928,7 +928,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 100
   currentHealth: 0
-  invincibilityDurationSeconds: 3
+  invincibilityDurationSeconds: 4
   HealthBarID: {fileID: 942604434}
   Transparen: {fileID: 21300000, guid: c31d72f68e65e8b469b86221c39dcf7b, type: 3}
   NotTransparent: {fileID: 21300000, guid: 118c690bf739ae74391fac622e5bdaae, type: 3}
