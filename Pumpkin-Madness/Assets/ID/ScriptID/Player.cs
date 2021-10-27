@@ -10,7 +10,7 @@ public class Player : MonoBehaviour
     private bool Enemy;
     private bool isInvincible = false; 
     [SerializeField] private float invincibilityDurationSeconds;
-    [SerializeField] private float invincibilityDeltaTime;
+    // [SerializeField] private float invincibilityDeltaTime;
     public HealthBarID HealthBarID;
     // Start is called before the first frame update
     void Start()
@@ -65,18 +65,20 @@ public class Player : MonoBehaviour
         Debug.Log("Player turned invincible!");
         isInvincible = true;
     
-        for (float i = 0; i < invincibilityDurationSeconds; i += invincibilityDeltaTime)
+        for (int i = 0; i < invincibilityDurationSeconds; i += 1)
         {
             // Alternate between 0 and 1 scale to simulate flashing
             if (gameObject.transform.localScale == Vector3.one)
             {
                 ScaleModelTo(Vector3.zero);
+                Debug.Log("One");
             }
             else
             {
                 ScaleModelTo(Vector3.one);
+                Debug.Log("two");
             }
-            yield return new WaitForSeconds(invincibilityDeltaTime);
+            yield return new WaitForSeconds(1);
         }
     
         Debug.Log("Player is no longer invincible!");
