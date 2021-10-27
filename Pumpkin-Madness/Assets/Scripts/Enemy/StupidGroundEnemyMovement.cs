@@ -8,19 +8,27 @@ public class StupidGroundEnemyMovement : MonoBehaviour
 {
     private GameObject player;
 
-    [SerializeField] private float movementSpeed;
-    [SerializeField] private float jumpHeight;
+    [SerializeField] private float sidewaysMovementStrength;
+    [SerializeField] private float jumpStrength;
     [SerializeField] private float aggroRange;
     [SerializeField] private int changeDirectionChance;
     [SerializeField] private LayerMask groundLayerMask;
+    [SerializeField] private int jumpCoolDownUpperRange;
+    [SerializeField] private int jumpCoolDownLowerRange;
+
+
 
     private const float groundCheckRadius = 0f;
     private Vector3 groundCheckCoordinateOffset = new Vector3(0f, -.5f, 0f);
     
     private float direction = 1f;
+    private bool jumpOnCoolDown;
 
     private Random random = new Random();
     private Rigidbody2D rigidbody2D;
+    
+    
+    
     
     
     // Start is called before the first frame update
@@ -34,33 +42,54 @@ public class StupidGroundEnemyMovement : MonoBehaviour
     
     void FixedUpdate()
     {
-        if (CheckIfGrounded())
+        if (!jumpOnCoolDown)
         {
-            if (DistanceCheckToTarget())
+            if (CheckIfGrounded())
             {
-                // Aggressive targeted movement.
-            }
-            else
-            {
-                // Stupid random movement.
-                if (random.Next(0, 100) < changeDirectionChance)
+                if (DistanceCheckToTarget())
                 {
-                    // Change direction.
-                    direction = direction * -1;
+                    // Aggressive targeted movement.
+                    if (player.transform.position.x > transform.position.x)
+                    {
+                        direction = 1;
+                    }
+                    else
+                    {
+                        direction = -1;
+                    }
+                }
+                else
+                {
+                    // Stupid random movement.
+                    if (random.Next(0, 100) < changeDirectionChance)
+                    {
+                        // Change direction.
+                        direction = direction * -1;
+                    }
                 }
 
+                jumpOnCoolDown = true;
+                StartCoroutine(JumpCooldown());
                 rigidbody2D.velocity = new Vector2(0f, 0f);
-                rigidbody2D.AddForce(new Vector2(movementSpeed * direction, jumpHeight));
+                rigidbody2D.AddForce(new Vector2(sidewaysMovementStrength * direction, jumpStrength));
             }
         }
     }
 
 
+    
     bool CheckIfGrounded()
     {
         return Physics2D.OverlapCircle(transform.position + groundCheckCoordinateOffset, groundCheckRadius, groundLayerMask);
     }
     
+    
+    
+    IEnumerator JumpCooldown() 
+    {
+        yield return new WaitForSeconds(random.Next(jumpCoolDownLowerRange, jumpCoolDownUpperRange));
+        jumpOnCoolDown = false;
+    }
     
     
     // SudoCode
@@ -74,15 +103,5 @@ public class StupidGroundEnemyMovement : MonoBehaviour
     bool DistanceCheckToTarget()
     {
         return Vector3.Distance(transform.position, player.transform.position) <= aggroRange;
-
-
-        // var result = false;
-        // foreach (var car in carsInScene)
-        // {
-        //     result = Vector3.Distance(gameObject.transform.position, car.gameObject.transform.position) <= RangeToGetIn;
-        //     if (!result) continue;
-        //     targetCar = car;
-        //     break;
-        // }
     }
 }

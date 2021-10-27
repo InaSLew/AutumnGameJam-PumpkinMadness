@@ -200,10 +200,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 450d81668cf162f4ab355f219564e690, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  movementSpeed: 300
-  jumpHeight: 700
-  aggroRange: 0
+  sidewaysMovementStrength: 300
+  jumpStrength: 700
+  aggroRange: 5
   changeDirectionChance: 30
   groundLayerMask:
     serializedVersion: 2
     m_Bits: 8
+  jumpCoolDownUpperRange: 3
+  jumpCoolDownLowerRange: 1
