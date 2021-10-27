@@ -41,7 +41,7 @@ public class Player : MonoBehaviour
         }
     }
 
-    void TakeDamage(int damage)
+    public void TakeDamage(int damage)
     {
         if(isInvincible) return;
         currentHealth -= damage;
@@ -66,11 +66,20 @@ public class Player : MonoBehaviour
 
         for (float i = 0; i < invincibilityDurationSeconds; i += invincibilityDeltaTime)
         {
-            // TODO: add any logic we want here
+            // Alternate between 0 and 1 scale to simulate flashing
+            if (model.transform.localScale == Vector3.one)
+            {
+                ScaleModelTo(Vector3.zero);
+            }
+            else
+            {
+                ScaleModelTo(Vector3.one);
+            }
             yield return new WaitForSeconds(invincibilityDeltaTime);
         }
 
         Debug.Log("Player is no longer invincible!");
+        ScaleModelTo(Vector3.one);
         isInvincible = false;
     }
     private void ScaleModelTo(Vector3 scale)
