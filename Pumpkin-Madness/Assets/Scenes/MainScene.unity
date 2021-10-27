@@ -487,9 +487,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 100
   currentHealth: 0
-  invincibilityDurationSeconds: 3
+  invincibilityDurationSeconds: 1.5
   invincibilityDeltaTime: 0
-  model: {fileID: 454136418}
   HealthBarID: {fileID: 942604434}
 --- !u!1 &519420028
 GameObject:

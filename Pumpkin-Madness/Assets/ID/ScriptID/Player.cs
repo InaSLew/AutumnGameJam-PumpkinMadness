@@ -11,8 +11,6 @@ public class Player : MonoBehaviour
     private bool isInvincible = false; 
     [SerializeField] private float invincibilityDurationSeconds;
     [SerializeField] private float invincibilityDeltaTime;
-    [SerializeField] private GameObject model;
-
     public HealthBarID HealthBarID;
     // Start is called before the first frame update
     void Start()
@@ -70,7 +68,7 @@ public class Player : MonoBehaviour
         for (float i = 0; i < invincibilityDurationSeconds; i += invincibilityDeltaTime)
         {
             // Alternate between 0 and 1 scale to simulate flashing
-            if (model.transform.localScale == Vector3.one)
+            if (gameObject.transform.localScale == Vector3.one)
             {
                 ScaleModelTo(Vector3.zero);
             }
@@ -87,7 +85,7 @@ public class Player : MonoBehaviour
     }
     private void ScaleModelTo(Vector3 scale)
     {
-        model.transform.localScale = scale;
+        gameObject.transform.localScale = scale;
     }
     
     
