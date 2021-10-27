@@ -7,12 +7,9 @@ public class PlayerMovement : MonoBehaviour
     public PlayerController playerController;
     public float walkSpeed = 50f;
     float moveLeftRight = 0f;
-    public bool jump = false;
-    
-    
-    
-    // Start is called before the first frame update
-    void Start()
+    bool jump = false;
+
+    void Update()
     {
         moveLeftRight = Input.GetAxisRaw("Horizontal") * walkSpeed;
         if (Input.GetButtonDown("Jump"))
@@ -21,8 +18,7 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
-    // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         playerController.Move(moveLeftRight *Time.deltaTime, false, jump);
         jump = false;
