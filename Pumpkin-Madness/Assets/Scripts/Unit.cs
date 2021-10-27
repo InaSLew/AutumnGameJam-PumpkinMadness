@@ -1,6 +1,6 @@
 using UnityEngine;
 
-internal abstract class Unit : MonoBehaviour
+public abstract class Unit : MonoBehaviour
 {
     protected Unit(int maxHealth, int damagePower)
     {
