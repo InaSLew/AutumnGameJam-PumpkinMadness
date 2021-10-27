@@ -13,7 +13,6 @@ GameObject:
   - component: {fileID: -7374225222971373074}
   - component: {fileID: 3789309141243859926}
   - component: {fileID: 2187035380351443957}
-  - component: {fileID: -212704287648481558}
   m_Layer: 0
   m_Name: Weak_Enemy
   m_TagString: Enemy
@@ -137,15 +136,3 @@ CapsuleCollider2D:
   m_Offset: {x: 0, y: 0}
   m_Size: {x: 1, y: 1}
   m_Direction: 1
---- !u!114 &-212704287648481558
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1504458423592416594}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5d4194d75b73a7d4899a667b46f85cea, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 

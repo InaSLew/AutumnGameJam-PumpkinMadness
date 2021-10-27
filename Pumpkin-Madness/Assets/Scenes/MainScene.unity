@@ -462,13 +462,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 454136418}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.01, y: -0.11, z: 0}
+  m_LocalPosition: {x: -0.01, y: -0.93, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1081029717}
   - {fileID: 936141706}
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &519420028
 GameObject:
@@ -860,7 +860,7 @@ GameObject:
   - component: {fileID: 1053470041}
   - component: {fileID: 1053470040}
   - component: {fileID: 1053470039}
-  m_Layer: 7
+  m_Layer: 3
   m_Name: Ground
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -957,7 +957,7 @@ Transform:
   m_LocalScale: {x: 22.265083, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1072552582
 GameObject:
@@ -1417,7 +1417,7 @@ RectTransform:
   m_Children:
   - {fileID: 942604433}
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -1510,68 +1510,3 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1001 &332793199769228327
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 332793199456680673, guid: a48659bb504cf12469611e575bf109d1, type: 3}
-      propertyPath: m_RootOrder
-      value: 6
-      objectReference: {fileID: 0}
-    - target: {fileID: 332793199456680673, guid: a48659bb504cf12469611e575bf109d1, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 2.48
-      objectReference: {fileID: 0}
-    - target: {fileID: 332793199456680673, guid: a48659bb504cf12469611e575bf109d1, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 3.37
-      objectReference: {fileID: 0}
-    - target: {fileID: 332793199456680673, guid: a48659bb504cf12469611e575bf109d1, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 332793199456680673, guid: a48659bb504cf12469611e575bf109d1, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 332793199456680673, guid: a48659bb504cf12469611e575bf109d1, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 332793199456680673, guid: a48659bb504cf12469611e575bf109d1, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 332793199456680673, guid: a48659bb504cf12469611e575bf109d1, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 332793199456680673, guid: a48659bb504cf12469611e575bf109d1, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 332793199456680673, guid: a48659bb504cf12469611e575bf109d1, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 332793199456680673, guid: a48659bb504cf12469611e575bf109d1, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 332793199456680674, guid: a48659bb504cf12469611e575bf109d1, type: 3}
-      propertyPath: m_Name
-      value: Flying_Weak_Enemy
-      objectReference: {fileID: 0}
-    - target: {fileID: 332793199456680674, guid: a48659bb504cf12469611e575bf109d1, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 332793199456680686, guid: a48659bb504cf12469611e575bf109d1, type: 3}
-      propertyPath: target
-      value: 
-      objectReference: {fileID: 890876458}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: a48659bb504cf12469611e575bf109d1, type: 3}
