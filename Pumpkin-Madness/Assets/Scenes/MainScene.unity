@@ -1260,7 +1260,7 @@ MonoBehaviour:
   offset: {x: 0, y: 0, z: -13}
   maximumXFromCenter: 15.5
   lowestY: 1.9
-  maximumY: 0
+  maximumY: 11.9
 --- !u!20 &519420031
 Camera:
   m_ObjectHideFlags: 0
