@@ -302,6 +302,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Destr platform (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 2530016002357963924, guid: f3d3a114410c65f4d85ecdf75a6ca2d2, type: 3}
+      propertyPath: timer
+      value: 4
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f3d3a114410c65f4d85ecdf75a6ca2d2, type: 3}
 --- !u!1001 &129667901
@@ -1156,6 +1160,10 @@ PrefabInstance:
     - target: {fileID: 556860416612358327, guid: f3d3a114410c65f4d85ecdf75a6ca2d2, type: 3}
       propertyPath: m_Name
       value: Destr platform (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2530016002357963924, guid: f3d3a114410c65f4d85ecdf75a6ca2d2, type: 3}
+      propertyPath: timer
+      value: 4
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f3d3a114410c65f4d85ecdf75a6ca2d2, type: 3}
@@ -3758,6 +3766,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Destr platform (5)
       objectReference: {fileID: 0}
+    - target: {fileID: 2530016002357963924, guid: f3d3a114410c65f4d85ecdf75a6ca2d2, type: 3}
+      propertyPath: timer
+      value: 4
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f3d3a114410c65f4d85ecdf75a6ca2d2, type: 3}
 --- !u!1001 &1223263427
@@ -4104,6 +4116,10 @@ PrefabInstance:
     - target: {fileID: 556860416612358327, guid: f3d3a114410c65f4d85ecdf75a6ca2d2, type: 3}
       propertyPath: m_Name
       value: Destr platform (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2530016002357963924, guid: f3d3a114410c65f4d85ecdf75a6ca2d2, type: 3}
+      propertyPath: timer
+      value: 4
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f3d3a114410c65f4d85ecdf75a6ca2d2, type: 3}
