@@ -17,15 +17,18 @@ public class DestrucktivPlattform : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        // if (!gameObject.activeInHierarchy)
+        // {
+        //     Debug.Log("listen here you lil shit");
+        //     Test2();
+        // }
     }
 
     private void OnCollisionStay2D(Collision2D other)
     {
         if (other.gameObject.tag == "Player" )
         {
-            // Thread.Sleep(4500);
             Invoke(nameof(Test), timer);
-            StartCoroutine(waitSecounds());
         }
         
     }
@@ -33,17 +36,16 @@ public class DestrucktivPlattform : MonoBehaviour
     private void Test()
     {
         gameObject.SetActive(false);
-        
-    }
-
-    private void Test2()
-    {
-        gameObject.SetActive(true);
+        Debug.Log("works");
+        StartCoroutine(waitSecounds());
     }
 
     IEnumerator waitSecounds()
     {
+        Debug.Log("platform active? " + gameObject.activeInHierarchy);
+        Debug.Log("platform active? " + gameObject.activeInHierarchy);
+        Debug.Log(gameObject.name);
         yield return new WaitForSeconds(4);
-        Invoke(nameof(Test2), timer);
+        gameObject.SetActive(true);
     }
 }
