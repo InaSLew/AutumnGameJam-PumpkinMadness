@@ -19,12 +19,10 @@ public class Enemy : Unit
             destinationSetter.target = player.transform;
     }
 
-    private void OnTriggerEnter2D(Collider2D other)
+    private void OnTriggerEnter2D(Collider2D triggerCollider)
     {
-        if (other.gameObject == player)
+        if (triggerCollider.gameObject == player)
         {
-            // Deal damage to player.
-            // player.dealdamage(damagePower);
             player.GetComponent<Player>().TakeDamage(DamagePower);
         }
     }

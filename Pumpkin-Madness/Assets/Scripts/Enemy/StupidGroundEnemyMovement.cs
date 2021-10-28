@@ -12,9 +12,9 @@ public class StupidGroundEnemyMovement : MonoBehaviour
     [SerializeField] private float jumpStrength;
     [SerializeField] private float aggroRange;
     [SerializeField] private int changeDirectionChance;
-    [SerializeField] private LayerMask groundLayerMask;
     [SerializeField] private int jumpCoolDownUpperRange;
     [SerializeField] private int jumpCoolDownLowerRange;
+    [SerializeField] private int aggroJumpCoolDownReduction;
 
 
 
@@ -26,7 +26,7 @@ public class StupidGroundEnemyMovement : MonoBehaviour
 
     private Random random = new Random();
     private Rigidbody2D rigidbody2D;
-    
+    private LayerMask groundLayerMask;
     
     
     
@@ -36,6 +36,7 @@ public class StupidGroundEnemyMovement : MonoBehaviour
     {
         player = GameObject.FindGameObjectWithTag("Player");
         rigidbody2D = GetComponent<Rigidbody2D>();
+        groundLayerMask = LayerMask.GetMask("Obstacle");
     }
     
     
@@ -57,6 +58,8 @@ public class StupidGroundEnemyMovement : MonoBehaviour
                     {
                         direction = -1;
                     }
+                    // Start the timer with a negative causing the jumps to be more frequent if a player is nearby.
+                    StartCoroutine(JumpCooldown(aggroJumpCoolDownReduction));
                 }
                 else
                 {
@@ -66,10 +69,10 @@ public class StupidGroundEnemyMovement : MonoBehaviour
                         // Change direction.
                         direction = direction * -1;
                     }
+                    StartCoroutine(JumpCooldown());
                 }
 
                 jumpOnCoolDown = true;
-                StartCoroutine(JumpCooldown());
                 rigidbody2D.velocity = new Vector2(0f, 0f);
                 rigidbody2D.AddForce(new Vector2(sidewaysMovementStrength * direction, jumpStrength));
             }
@@ -82,12 +85,12 @@ public class StupidGroundEnemyMovement : MonoBehaviour
     {
         return Physics2D.OverlapCircle(transform.position + groundCheckCoordinateOffset, groundCheckRadius, groundLayerMask);
     }
-    
-    
-    
-    IEnumerator JumpCooldown() 
+
+
+
+    IEnumerator JumpCooldown(int coolDownReduction = 0) 
     {
-        yield return new WaitForSeconds(random.Next(jumpCoolDownLowerRange, jumpCoolDownUpperRange));
+        yield return new WaitForSeconds(Math.Max(random.Next(jumpCoolDownLowerRange, jumpCoolDownUpperRange) - coolDownReduction, 0));
         jumpOnCoolDown = false;
     }
     
