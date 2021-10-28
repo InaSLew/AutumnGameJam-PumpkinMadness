@@ -7,6 +7,7 @@ public class GameController : MonoBehaviour
     private void Awake()
     {
         randomEnemySpawn = GetComponent<RandomEnemySpawn>();
+        
     }
 
     private void Update()

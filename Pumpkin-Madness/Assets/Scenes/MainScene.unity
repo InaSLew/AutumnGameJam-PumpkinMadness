@@ -857,7 +857,7 @@ GameObject:
   - component: {fileID: 337279811}
   - component: {fileID: 337279810}
   m_Layer: 5
-  m_Name: Text (TMP)
+  m_Name: Counter (TMP)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -879,7 +879,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 7.2854, y: -2.8439}
+  m_AnchoredPosition: {x: 22.6, y: -2.9}
   m_SizeDelta: {x: 96.0605, y: 20.9806}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &337279810
@@ -4357,6 +4357,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timeCounter: {fileID: 337279810}
+  startTimer: 0
 --- !u!1001 &1899588719
 PrefabInstance:
   m_ObjectHideFlags: 0
