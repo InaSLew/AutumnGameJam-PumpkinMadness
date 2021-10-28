@@ -19,12 +19,14 @@ public class PlayerAttack : MonoBehaviour
             {
                 // Debug.Log(mousePos.x);
                 // Debug.Log(mousePos.y);
-                mousePos.z = -13;
-                Vector2 worldPosition = Camera.main.ScreenToWorldPoint(mousePos);
+                mousePos.z = 13;
+                Vector2 worldPosition = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Camera>().ScreenToWorldPoint(mousePos);
                 Debug.Log($"X = {worldPosition.x}");
                 Debug.Log($"Y = {worldPosition.y}");
                 transform.position = worldPosition;
             }
         }
     }
+    // Make a knife follow the mouse.
+    // Limit it to a specified distance away from the player after which it wont go further.
 }
