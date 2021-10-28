@@ -25,13 +25,13 @@ public class GroundEnemyMovement : MonoBehaviour
     private float direction = 1f;
     private bool jumpOnCoolDown;
 
-    private Rigidbody2D rigidbody2D;
+    private Rigidbody2D rb;
     private LayerMask groundLayerMask;
     
     void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player");
-        rigidbody2D = GetComponent<Rigidbody2D>();
+        rb = GetComponent<Rigidbody2D>();
         groundLayerMask = LayerMask.GetMask("Obstacle");
     }
     
@@ -67,8 +67,8 @@ public class GroundEnemyMovement : MonoBehaviour
                 }
 
                 jumpOnCoolDown = true;
-                rigidbody2D.velocity = new Vector2(0f, 0f);
-                rigidbody2D.AddForce(new Vector2(sidewaysMovementStrength * direction, jumpStrength));
+                rb.velocity = new Vector2(0f, 0f);
+                rb.AddForce(new Vector2(sidewaysMovementStrength * direction, jumpStrength));
             }
         }
     }
