@@ -14,11 +14,16 @@ public abstract class Unit : MonoBehaviour
     protected int Health
     {
         private get => health;
-        set => health = Mathf.Clamp(value, 0, MaxHealth);
+        set
+        {
+            health = Mathf.Clamp(value, 0, MaxHealth);
+            if (IsDead)
+                Destroy(this.gameObject);
+        } 
     }
     protected int MaxHealth { get; }
     protected int DamagePower { get; }
 
-    protected virtual void TakeDamage(int value) => Health -= value;
+    public virtual void TakeDamage(int value) => Health -= value;
     protected virtual void Attack(Unit target) => target.TakeDamage(target.DamagePower);
 }
