@@ -760,7 +760,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   shouldSpawn: 0
-  enemyPrefab: {fileID: 993696152925379693, guid: eb06f71367cd44e46b6fd5df06aabdfb, type: 3}
+  enemyPrefab: {fileID: -5004454507121452738, guid: eb06f71367cd44e46b6fd5df06aabdfb, type: 3}
 --- !u!1001 &362855857
 PrefabInstance:
   m_ObjectHideFlags: 0
