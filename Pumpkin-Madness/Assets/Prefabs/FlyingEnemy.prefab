@@ -128,6 +128,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5d4194d75b73a7d4899a667b46f85cea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  MaxHealth: 50
+  DamagePower: 25
 --- !u!70 &2850826354901196564
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
