@@ -546,3 +546,6 @@ FodyWeavers.xsd
 
 
 !/Packages/*
+
+
+Assets/AstarPathfindingProject/ExampleScenes/Example6_Navmesh/navmesh.obj.meta
