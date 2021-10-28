@@ -11,9 +11,9 @@ public class RandomEnemySpawn : MonoBehaviour
     public Enemy flyingEnemy;
     private GameObject[] spawnWalls;
     private GameObject player;
-    private const int TutorialPhaseGroundEnemyCap = 3;
+    private const int TutorialPhaseGroundEnemyCap = 50;
     private const float GroundEnemySpawnOffset = 1.5f;
-    private const int TutorialPhaseFlyingEnemyCap = 2;
+    private const int TutorialPhaseFlyingEnemyCap = 50;
 
     private void Awake()
     {

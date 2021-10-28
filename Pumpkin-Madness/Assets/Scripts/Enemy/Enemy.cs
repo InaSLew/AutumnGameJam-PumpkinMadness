@@ -7,7 +7,7 @@ using UnityEngine;
 public class Enemy : Unit
 {
     // public int MaxHealth;
-    public Enemy() : base(4) {}
+    public Enemy() : base() {}
 
     public int SpawnId { get; }
     
@@ -23,8 +23,20 @@ public class Enemy : Unit
         // Make the player the target for the ai.
         if (TryGetComponent(out AIDestinationSetter destinationSetter))
             destinationSetter.target = player.transform;
+
+        Debug.Log(IsDead);
     }
 
+    
+    
+    private void OnTriggerStay2D(Collider2D triggerCollider)
+    {
+        if (triggerCollider.gameObject == player)
+        {
+            player.GetComponent<Player>().TakeDamage(DamagePower);
+        }
+    }
+    
     
     
     private void OnTriggerEnter2D(Collider2D triggerCollider)
@@ -43,6 +55,7 @@ public class Enemy : Unit
         base.TakeDamage(value);
         if (IsDead)
         {
+            Debug.Log($"Took {value} damage and died!");
             // TODO: Add caller to kill count here! --------------------------------------------------------------------
         }
     }
