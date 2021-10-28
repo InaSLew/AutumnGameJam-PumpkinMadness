@@ -661,6 +661,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerController: {fileID: 0}
   walkSpeed: 50
+  runMultiplier: 1.5
 --- !u!114 &1516247300
 MonoBehaviour:
   m_ObjectHideFlags: 0

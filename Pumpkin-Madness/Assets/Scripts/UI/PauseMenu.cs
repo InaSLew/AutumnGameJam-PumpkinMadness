@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class PauseMenu : MonoBehaviour
 {
@@ -19,6 +20,7 @@ public class PauseMenu : MonoBehaviour
         {
             if (GameIsPause)
             {
+                Debug.Log("Abt to Resume!");
                 Resume();
             }
             else 
@@ -44,8 +46,10 @@ public class PauseMenu : MonoBehaviour
     } 
     public void LoadMenu()
     {
+        SceneManager.LoadScene("TitleScreen");
         Debug.Log("Loading menu");
-        
+        Time.timeScale = 1f;
+
     }
 
     public void QuitGame()

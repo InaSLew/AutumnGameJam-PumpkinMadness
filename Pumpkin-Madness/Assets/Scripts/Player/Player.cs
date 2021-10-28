@@ -12,7 +12,7 @@ public class Player : MonoBehaviour
     [SerializeField] private float invincibilityDurationSeconds;
     // [SerializeField] private float invincibilityDeltaTime;
     public HealthBarID HealthBarID;
-    public Sprite Transparen;
+    public Sprite Transparent;
     private SpriteRenderer spriteRenderer;
     public Sprite NotTransparent;
     
@@ -30,9 +30,9 @@ public class Player : MonoBehaviour
 
     public void TakeDamage(int damage)
     {
-        Debug.Log($"Player lost {damage} health!");
-        
         if(isInvincible) return;
+        Debug.Log($"Player lost {damage} health!");
+
         currentHealth -= damage;
         HealthBarID.SetHealth(currentHealth);
         if (currentHealth<=0)
@@ -83,7 +83,7 @@ public class Player : MonoBehaviour
             else
             {
                 temp++;
-                spriteRenderer.sprite = Transparen;
+                spriteRenderer.sprite = Transparent;
             }
             yield return new WaitForSeconds(0.2f);
         }
