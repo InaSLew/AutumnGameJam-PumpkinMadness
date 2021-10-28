@@ -1153,7 +1153,7 @@ MonoBehaviour:
     m_Bits: 191
   m_GroundCheck: {fileID: 936141706}
   m_CeilingCheck: {fileID: 1081029717}
-  m_CrouchDisableCollider: {fileID: 0}
+  m_CrouchDisableCollider: {fileID: 454136422}
   OnLandEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -1264,7 +1264,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 504d7e364f372b8469841a786f206809, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 26edfe4031737b147bba09808a68296d, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -1307,8 +1307,8 @@ MonoBehaviour:
   currentHealth: 0
   invincibilityDurationSeconds: 3
   HealthBarID: {fileID: 942604434}
-  Transparent: {fileID: 0}
-  NotTransparent: {fileID: 21300000, guid: 42b92cb3215bb584c93aa755b3c59dc5, type: 3}
+  Transparent: {fileID: 21300000, guid: 26edfe4031737b147bba09808a68296d, type: 3}
+  NotTransparent: {fileID: 21300000, guid: 5800a735c3540dc4e8c867db267595ed, type: 3}
 --- !u!114 &454136427
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5087,6 +5087,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7510853761509317592, guid: b587fa4a7a8cd8d498e0be7380e08e22, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 400589392bc85b7449e8aacbf0375b47, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b587fa4a7a8cd8d498e0be7380e08e22, type: 3}
 --- !u!4 &5033973638599808959 stripped
@@ -5465,6 +5469,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7510853761509317592, guid: b587fa4a7a8cd8d498e0be7380e08e22, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 400589392bc85b7449e8aacbf0375b47, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b587fa4a7a8cd8d498e0be7380e08e22, type: 3}
 --- !u!4 &9178101021075862867 stripped
