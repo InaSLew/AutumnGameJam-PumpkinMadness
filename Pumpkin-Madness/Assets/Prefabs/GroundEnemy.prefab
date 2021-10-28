@@ -222,3 +222,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   MaxHealth: 50
   DamagePower: 50
+  ps: {fileID: 0}
