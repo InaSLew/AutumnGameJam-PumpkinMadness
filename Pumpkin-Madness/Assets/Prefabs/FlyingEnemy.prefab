@@ -13,9 +13,9 @@ GameObject:
   - component: {fileID: 332793199456680687}
   - component: {fileID: 332793199456680672}
   - component: {fileID: 8924721309400034330}
-  - component: {fileID: 2850826354901196564}
   - component: {fileID: 2593576565159457643}
-  - component: {fileID: 2251261720975826847}
+  - component: {fileID: 3343574398136585285}
+  - component: {fileID: 1275973418814717982}
   m_Layer: 0
   m_Name: FlyingEnemy
   m_TagString: Enemy
@@ -93,7 +93,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   version: 2
-  radius: 0.6
+  radius: 0.8
   height: 2
   repathRate: 0.5
   canSearch: 1
@@ -130,22 +130,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   MaxHealth: 50
   DamagePower: 25
---- !u!70 &2850826354901196564
-CapsuleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 332793199456680674}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_Size: {x: 1, y: 0.7}
-  m_Direction: 1
 --- !u!50 &2593576565159457643
 Rigidbody2D:
   serializedVersion: 4
@@ -167,8 +151,8 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!70 &2251261720975826847
-CapsuleCollider2D:
+--- !u!58 &3343574398136585285
+CircleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -181,8 +165,24 @@ CapsuleCollider2D:
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
-  m_Size: {x: 1, y: 0.7}
-  m_Direction: 1
+  serializedVersion: 2
+  m_Radius: 0.8
+--- !u!58 &1275973418814717982
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 332793199456680674}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 0.8
 --- !u!1 &3475796740058257200
 GameObject:
   m_ObjectHideFlags: 0
