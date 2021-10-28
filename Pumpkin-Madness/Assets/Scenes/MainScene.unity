@@ -23913,6 +23913,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   weaponDamage: 200
+  totalFramesToMoveAway: 5
 --- !u!1 &1429444561
 GameObject:
   m_ObjectHideFlags: 0

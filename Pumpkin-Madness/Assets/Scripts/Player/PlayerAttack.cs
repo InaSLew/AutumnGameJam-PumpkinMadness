@@ -19,11 +19,22 @@ public class PlayerAttack : MonoBehaviour
     }
 
 
-    private void OnTriggerEnter2D(Collider2D other)
+    private void OnTriggerStay2D(Collider2D other)
     {
+        Debug.Log(other.gameObject.name);
+        Debug.Log($"should be {player.name}");
+        
         if (other.gameObject.CompareTag("Enemy"))
         {
             other.gameObject.GetComponent<Enemy>().TakeDamage(weaponDamage);
+        }
+
+        Debug.Log($"{other.gameObject.name} has the tag: {other.gameObject.tag}");
+        if (other.gameObject.CompareTag("Player"))
+        {
+            Debug.Log("Weapon returned!");
+            weaponThrown = false;
+            throwIteration = 0;
         }
     }
 
@@ -34,8 +45,49 @@ public class PlayerAttack : MonoBehaviour
     private Vector3 weaponTargetPosition;
     private bool weaponReturnToPlayer;
 
+    public int totalFramesToMoveAway;
+    private int throwIteration;
 
     private void FixedUpdate()
+    {
+        if (weaponThrown)
+        {
+            if (throwIteration < totalFramesToMoveAway)
+            {
+                transform.position = Vector3.Lerp(transform.position, weaponTargetPosition, 0.1f);
+                throwIteration++;
+            }
+            else
+            {
+                transform.position = Vector3.Lerp(transform.position, transform.parent.position, 0.1f);
+            }
+        }
+
+
+        // if (weaponThrown)
+        // {
+        //     if (weaponReturnToPlayer)
+        //     {
+        //         transform.position = Vector3.Lerp(transform.position, transform.parent.position, 0.1f);
+        //     }
+        //     else if (weaponReturnToPlayer && transform.position == transform.parent.position)
+        //     {
+        //         weaponReturnToPlayer = false;
+        //         weaponThrown = false;
+        //     }
+        //     else if (transform.position == weaponTargetPosition)
+        //     {
+        //         transform.position = Vector3.Lerp(transform.position, transform.parent.position, 0.1f);
+        //         weaponReturnToPlayer = true;
+        //     }
+        //     else
+        //     {
+        //         transform.position = Vector3.Lerp(transform.position, weaponTargetPosition, 0.1f);
+        //     }
+        // }
+    }
+
+    private void Update()
     {
         if (Input.GetMouseButtonDown(0))
         {
@@ -47,37 +99,8 @@ public class PlayerAttack : MonoBehaviour
                 mousePosition.z = 13;
                 weaponTargetPosition = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Camera>().ScreenToWorldPoint(mousePosition);
                 weaponThrown = true;
+                Debug.Log(weaponTargetPosition);
                 Debug.Log("Weapon thrown!");
-            }
-        }
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        if (weaponThrown)
-        {
-            if (weaponReturnToPlayer)
-            {
-                transform.position = Vector3.Lerp(transform.position, transform.parent.position, 0.1f);
-            }
-            else if (weaponReturnToPlayer && transform.position == transform.parent.position)
-            {
-                weaponReturnToPlayer = false;
-                weaponThrown = false;
-            }
-            else if (transform.position == weaponTargetPosition)
-            {
-                transform.position = Vector3.Lerp(transform.position, transform.parent.position, 0.1f);
-                weaponReturnToPlayer = true;
-            }
-            else
-            {
-                transform.position = Vector3.Lerp(transform.position, weaponTargetPosition, 0.1f);
             }
         }
     }
