@@ -19,7 +19,7 @@ public class RandomEnemySpawn : MonoBehaviour
     }
 
     internal void SpawnEnemies(bool isToSpawn) {
-        Debug.Log("SpawnEnemies fires!!");
+        // Debug.Log("SpawnEnemies fires!!");
         if (isToSpawn) player = GameObject.FindGameObjectWithTag("Player");
         shouldSpawn = isToSpawn;
     }
