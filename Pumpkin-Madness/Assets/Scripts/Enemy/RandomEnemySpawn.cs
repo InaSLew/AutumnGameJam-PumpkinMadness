@@ -1,13 +1,11 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
 public class RandomEnemySpawn : MonoBehaviour
 {
-    public bool shouldSpawn;
-    public Enemy enemyPrefab;
+    public bool shouldSpawn = true;
+    public Enemy groundEnemy;
+    public Enemy flyingEnemy;
     private GameObject[] spawnWalls;
     private GameObject player;
 
@@ -19,7 +17,6 @@ public class RandomEnemySpawn : MonoBehaviour
     }
 
     internal void SpawnEnemies(bool isToSpawn) {
-        // Debug.Log("SpawnEnemies fires!!");
         if (isToSpawn) player = GameObject.FindGameObjectWithTag("Player");
         shouldSpawn = isToSpawn;
     }
@@ -27,18 +24,15 @@ public class RandomEnemySpawn : MonoBehaviour
     private void SpawnEnemy()
     {
         if (!shouldSpawn || player == null) return;
-
-        Debug.Log("Start spawning enemies!!!!!");
-    
-        var enemy = Instantiate(enemyPrefab);
+        var enemy = Instantiate(groundEnemy);
         enemy.transform.position = GetRandomSpawnPosition();
     }
     
     private Vector3 GetRandomSpawnPosition()
     {
-        var targetWall = spawnWalls[Random.Range(0, 1)];
+        var targetWall = spawnWalls[Random.Range(0, 2)];
         var targetBound = targetWall.GetComponent<SpriteRenderer>().bounds;
-        var positionX = targetBound.size.x;
+        var positionX = targetWall.transform.position.x;
         var y = Random.Range(0, targetBound.size.y);
         return new Vector3(positionX, y, 0);
     }
