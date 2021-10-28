@@ -6,11 +6,12 @@ using UnityEngine;
 
 public class Enemy : Unit
 {
-    public Enemy(int spawnId) : base(1, 10) { SpawnId = spawnId; }
+    // public int MaxHealth;
+    public Enemy() : base(4) {}
 
     public int SpawnId { get; }
     
-    [SerializeField] protected string EnemyType;
+    
     private GameObject player;
     
     

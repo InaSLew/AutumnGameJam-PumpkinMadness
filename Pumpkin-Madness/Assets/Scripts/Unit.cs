@@ -2,10 +2,12 @@ using UnityEngine;
 
 public abstract class Unit : MonoBehaviour
 {
-    protected Unit(int maxHealth, int damagePower)
+    [SerializeField] private int MaxHealth = 0;
+    [SerializeField] protected int DamagePower;
+    
+    
+    protected Unit(int temp)
     {
-        MaxHealth = maxHealth;
-        DamagePower = damagePower;
         health = MaxHealth;
     }
     public bool IsAlive => health > 0;
@@ -21,8 +23,6 @@ public abstract class Unit : MonoBehaviour
                 Destroy(this.gameObject);
         } 
     }
-    protected int MaxHealth { get; }
-    protected int DamagePower { get; }
 
     public virtual void TakeDamage(int value) => Health -= value;
     protected virtual void Attack(Unit target) => target.TakeDamage(target.DamagePower);
