@@ -10,6 +10,7 @@ public class Camera_Follow : MonoBehaviour
 
     [SerializeField] private float maximumXFromCenter;
     [SerializeField] private float lowestY;
+    [SerializeField] private float maximumY;
 
     private Vector3 targetVector3;
     
@@ -38,8 +39,10 @@ public class Camera_Follow : MonoBehaviour
         Vector3 temp = new Vector3();
         
         // Make sure the camera is set within the desired coordinates.
-        temp.x = Math.Max(Math.Min(targetVector3.x + offset.x, maximumXFromCenter), maximumXFromCenter * -1);
-        temp.y = Math.Max(targetVector3.y + offset.y, lowestY);
+        // temp.x = Math.Max(Math.Min(targetVector3.x + offset.x, maximumXFromCenter), maximumXFromCenter * -1);
+        // temp.y = Math.Max(Math.Min(targetVector3.y + offset.y, maximumY), lowestY);
+        temp.x = Mathf.Clamp(targetVector3.x + offset.x, maximumXFromCenter * -1, maximumXFromCenter);
+        temp.y = Mathf.Clamp(targetVector3.y + offset.y, lowestY, maximumY);
         temp.z = targetVector3.z + offset.z;
         return temp;
     }
