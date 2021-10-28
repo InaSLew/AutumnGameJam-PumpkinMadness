@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class PauseMeny : MonoBehaviour
+public class PauseMenu : MonoBehaviour
 {
     public static bool GameIsPause = false;
 
@@ -50,6 +50,7 @@ public class PauseMeny : MonoBehaviour
 
     public void QuitGame()
     {
+        Application.Quit();
         Debug.Log("Quit menu");
     }
 }
