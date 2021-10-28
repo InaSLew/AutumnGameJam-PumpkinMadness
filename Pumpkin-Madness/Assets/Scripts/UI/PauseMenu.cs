@@ -18,16 +18,21 @@ public class PauseMenu : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Escape))
         {
-            if (GameIsPause)
-            {
-                Debug.Log("Abt to Resume!");
-                Resume();
-            }
-            else 
-            {
-                Pause();
-            }
+           GameISPauset();
         }
+    }
+
+    public void GameISPauset()
+    {
+        if (GameIsPause)
+        {
+            Debug.Log("Abt to Resume!");
+            Resume();
+        }
+        else 
+        {
+            Pause();
+        } 
     }
 
     public void Resume()
@@ -38,7 +43,7 @@ public class PauseMenu : MonoBehaviour
         GameIsPause = false;
     }
 
-    void Pause()
+    public void Pause()
     {
         UIPause.SetActive(true);
         Time.timeScale = 0f;
@@ -57,4 +62,5 @@ public class PauseMenu : MonoBehaviour
         Application.Quit();
         Debug.Log("Quit menu");
     }
+    
 }
