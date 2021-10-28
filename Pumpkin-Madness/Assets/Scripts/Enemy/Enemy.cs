@@ -6,9 +6,14 @@ using UnityEngine;
 
 public class Enemy : Unit
 {
-    public Enemy() : base(1, 10) {}
+    public Enemy(int spawnId) : base(1, 10) { SpawnId = spawnId; }
 
+    public int SpawnId { get; }
+    
+    [SerializeField] protected string EnemyType;
     private GameObject player;
+    
+    
     
     private void Awake()
     {
@@ -19,11 +24,25 @@ public class Enemy : Unit
             destinationSetter.target = player.transform;
     }
 
+    
+    
     private void OnTriggerEnter2D(Collider2D triggerCollider)
     {
         if (triggerCollider.gameObject == player)
         {
             player.GetComponent<Player>().TakeDamage(DamagePower);
+        }
+    }
+
+    
+    
+    public override void TakeDamage(int value)
+    {
+        Debug.Log($"Enemy takes {value} damage!");
+        base.TakeDamage(value);
+        if (IsDead)
+        {
+            // TODO: Add caller to kill count here! --------------------------------------------------------------------
         }
     }
 }
