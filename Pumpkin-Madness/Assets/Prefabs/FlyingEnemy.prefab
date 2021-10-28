@@ -17,7 +17,7 @@ GameObject:
   - component: {fileID: 2593576565159457643}
   - component: {fileID: 2251261720975826847}
   m_Layer: 0
-  m_Name: Flying_Weak_Enemy
+  m_Name: FlyingEnemy
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
