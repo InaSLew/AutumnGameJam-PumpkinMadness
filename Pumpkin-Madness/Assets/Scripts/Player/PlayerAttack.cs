@@ -6,13 +6,15 @@ using UnityEngine;
 public class PlayerAttack : MonoBehaviour
 {
     private Player player;
+    private Rigidbody2D _rigidbody2D;
 
-    [SerializeField] private int weaponDamage;
+    [SerializeField] private int weaponDamage = 0;
     
     
     // Start is called before the first frame update
     void Start()
     {
+        _rigidbody2D = GetComponent<Rigidbody2D>();
         player = FindObjectOfType<Player>();
     }
 
@@ -26,39 +28,27 @@ public class PlayerAttack : MonoBehaviour
     }
 
 
+
     // Update is called once per frame
     void Update()
     {
-        Vector3 mousePos = Input.mousePosition;
-        
-        mousePos.z = 13;
-        Vector2 worldPosition = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Camera>().ScreenToWorldPoint(mousePos);
-        // Debug.Log($"X = {worldPosition.x}");
-        // Debug.Log($"Y = {worldPosition.y}");
-        transform.position = worldPosition;
-        Quaternion test = transform.rotation;
-        test.z = test.z + 1;
-        transform.rotation = test;
+        // Vector3 mousePos = Input.mousePosition;
+        //
+        // mousePos.z = 13;
+        // Vector3 worldPosition = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Camera>().ScreenToWorldPoint(mousePos);
+        //
+        // transform.right = worldPosition - transform.position;
+
+        // FollowTargetWithRotation(worldPosition, 0, 1);
+
+
+        // transform.Rotate(Vector3.forward);
 
 
 
 
 
 
-
-        // if (Input.GetButtonDown("Fire1"))
-        // {
-        //     Vector3 mousePos = Input.mousePosition;
-        //     {
-        //         // Debug.Log(mousePos.x);
-        //         // Debug.Log(mousePos.y);
-        //         mousePos.z = 13;
-        //         Vector2 worldPosition = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Camera>().ScreenToWorldPoint(mousePos);
-        //         Debug.Log($"X = {worldPosition.x}");
-        //         Debug.Log($"Y = {worldPosition.y}");
-        //         transform.position = worldPosition;
-        //     }
-        // }
     }
     // Make a knife follow the mouse.
     // Limit it to a specified distance away from the player after which it wont go further.

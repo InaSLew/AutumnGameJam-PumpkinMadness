@@ -1,15 +1,21 @@
+using System;
 using UnityEngine;
 
 public abstract class Unit : MonoBehaviour
 {
-    [SerializeField] private int MaxHealth = 0;
+    [SerializeField] private int MaxHealth;
     [SerializeField] protected int DamagePower;
     
     
-    protected Unit(int temp)
+    protected Unit()
+    {
+    }
+
+    private void Start()
     {
         health = MaxHealth;
     }
+
     public bool IsAlive => health > 0;
     public bool IsDead => !IsAlive;
     private int health;
