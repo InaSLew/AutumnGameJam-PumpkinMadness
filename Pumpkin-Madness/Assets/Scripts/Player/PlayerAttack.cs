@@ -13,6 +13,18 @@ public class PlayerAttack : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if (Input.GetButtonDown("Fire1"))
+        {
+            Vector3 mousePos = Input.mousePosition;
+            {
+                // Debug.Log(mousePos.x);
+                // Debug.Log(mousePos.y);
+                mousePos.z = -13;
+                Vector2 worldPosition = Camera.main.ScreenToWorldPoint(mousePos);
+                Debug.Log($"X = {worldPosition.x}");
+                Debug.Log($"Y = {worldPosition.y}");
+                transform.position = worldPosition;
+            }
+        }
     }
 }
