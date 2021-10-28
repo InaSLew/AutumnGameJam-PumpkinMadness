@@ -1,10 +1,13 @@
 using System;
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using Random = System.Random;
+using Random = UnityEngine.Random;
 
-public class StupidGroundEnemyMovement : MonoBehaviour
+/// <summary>
+/// Script that controls the movement of ground enemies. Enemies moves by jumping, will change direction randomly.
+/// If a player is in a specified range the enemy will start jumping in the players direction at a desired increased rate.
+/// </summary>
+public class GroundEnemyMovement : MonoBehaviour
 {
     private GameObject player;
 
@@ -16,30 +19,21 @@ public class StupidGroundEnemyMovement : MonoBehaviour
     [SerializeField] private int jumpCoolDownLowerRange;
     [SerializeField] private int aggroJumpCoolDownReduction;
 
-
-
     private const float groundCheckRadius = 0f;
     private Vector3 groundCheckCoordinateOffset = new Vector3(0f, -.5f, 0f);
     
     private float direction = 1f;
     private bool jumpOnCoolDown;
 
-    private Random random = new Random();
     private Rigidbody2D rigidbody2D;
     private LayerMask groundLayerMask;
     
-    
-    
-    
-    // Start is called before the first frame update
     void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player");
         rigidbody2D = GetComponent<Rigidbody2D>();
         groundLayerMask = LayerMask.GetMask("Obstacle");
     }
-    
-    
     
     void FixedUpdate()
     {
@@ -64,7 +58,7 @@ public class StupidGroundEnemyMovement : MonoBehaviour
                 else
                 {
                     // Stupid random movement.
-                    if (random.Next(0, 100) < changeDirectionChance)
+                    if (Random.Range(0, 100) < changeDirectionChance)
                     {
                         // Change direction.
                         direction = direction * -1;
@@ -78,22 +72,17 @@ public class StupidGroundEnemyMovement : MonoBehaviour
             }
         }
     }
-
-
     
     bool CheckIfGrounded()
     {
         return Physics2D.OverlapCircle(transform.position + groundCheckCoordinateOffset, groundCheckRadius, groundLayerMask);
     }
 
-
-
     IEnumerator JumpCooldown(int coolDownReduction = 0) 
     {
-        yield return new WaitForSeconds(Math.Max(random.Next(jumpCoolDownLowerRange, jumpCoolDownUpperRange) - coolDownReduction, 0));
+        yield return new WaitForSeconds(Math.Max(Random.Range(jumpCoolDownLowerRange, jumpCoolDownUpperRange) - coolDownReduction, 0));
         jumpOnCoolDown = false;
     }
-    
     
     // SudoCode
     // 20% chance to change direction.
