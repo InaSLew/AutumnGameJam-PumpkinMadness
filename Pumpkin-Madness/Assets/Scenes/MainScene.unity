@@ -1091,7 +1091,7 @@ GameObject:
   - component: {fileID: 454136420}
   - component: {fileID: 454136419}
   - component: {fileID: 454136426}
-  - component: {fileID: 454136421}
+  - component: {fileID: 454136422}
   m_Layer: 6
   m_Name: Player
   m_TagString: Player
@@ -1142,7 +1142,7 @@ MonoBehaviour:
   OnCrouchEvent:
     m_PersistentCalls:
       m_Calls: []
---- !u!60 &454136421
+--- !u!60 &454136422
 PolygonCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -4072,12 +4072,20 @@ PrefabInstance:
       value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 4722893250946112107, guid: 107b2a6b420739d4d9338438ac36ff72, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.9965
+      objectReference: {fileID: 0}
+    - target: {fileID: 4722893250946112107, guid: 107b2a6b420739d4d9338438ac36ff72, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.9737
+      objectReference: {fileID: 0}
+    - target: {fileID: 4722893250946112107, guid: 107b2a6b420739d4d9338438ac36ff72, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 13
+      value: 13.0066
       objectReference: {fileID: 0}
     - target: {fileID: 4722893250946112107, guid: 107b2a6b420739d4d9338438ac36ff72, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1
+      value: -1.0066
       objectReference: {fileID: 0}
     - target: {fileID: 4722893250946112107, guid: 107b2a6b420739d4d9338438ac36ff72, type: 3}
       propertyPath: m_LocalPosition.z
@@ -4110,6 +4118,14 @@ PrefabInstance:
     - target: {fileID: 4722893250946112107, guid: 107b2a6b420739d4d9338438ac36ff72, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4801598350850787007, guid: 107b2a6b420739d4d9338438ac36ff72, type: 3}
+      propertyPath: m_Size.x
+      value: 3.7668338
+      objectReference: {fileID: 0}
+    - target: {fileID: 4801598350850787007, guid: 107b2a6b420739d4d9338438ac36ff72, type: 3}
+      propertyPath: m_Offset.x
+      value: 0.0065829754
       objectReference: {fileID: 0}
     - target: {fileID: 5325691018777165835, guid: 107b2a6b420739d4d9338438ac36ff72, type: 3}
       propertyPath: m_Name
