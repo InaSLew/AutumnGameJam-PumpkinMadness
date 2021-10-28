@@ -113,6 +113,7 @@ GameObject:
   - component: {fileID: 1886632630117518857}
   - component: {fileID: -6542796461409892219}
   - component: {fileID: 943492817804100417}
+  - component: {fileID: -5004454507121452738}
   m_Layer: 0
   m_Name: Weak_Enemy
   m_TagString: Enemy
@@ -202,10 +203,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sidewaysMovementStrength: 300
   jumpStrength: 700
-  aggroRange: 5
+  aggroRange: 7
   changeDirectionChance: 30
-  groundLayerMask:
-    serializedVersion: 2
-    m_Bits: 8
   jumpCoolDownUpperRange: 3
   jumpCoolDownLowerRange: 1
+  aggroJumpCoolDownReduction: 3
+--- !u!114 &-5004454507121452738
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7147703560884468701}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5d4194d75b73a7d4899a667b46f85cea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
