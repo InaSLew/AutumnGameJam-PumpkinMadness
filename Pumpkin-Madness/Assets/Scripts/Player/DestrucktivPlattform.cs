@@ -7,11 +7,17 @@ public class DestrucktivPlattform : MonoBehaviour
     private bool destroyPlatform;
     private float startTime =2;
 
+  
+
     private void OnTriggerEnter2D(Collider2D other)
     {
+        
         if (other.gameObject.CompareTag("Player"))
         {
+            
             Invoke(nameof(DisablePlatform) ,startTime);
+           
+
             destroyPlatform = true;
         }
     }
@@ -31,10 +37,13 @@ public class DestrucktivPlattform : MonoBehaviour
     }
 
     private void DisablePlatform()
-    {
+    {  
+       
         if (destroyPlatform)
         {
             Debug.Log(destroyPlatform);
+            ParticleSystem ps = GameObject.Find("POof").GetComponent<ParticleSystem>();
+            ps.Play();
             gameObject.SetActive(false);
             Invoke(nameof(EnablePlatform), CoolDown);
             destroyPlatform = false;
