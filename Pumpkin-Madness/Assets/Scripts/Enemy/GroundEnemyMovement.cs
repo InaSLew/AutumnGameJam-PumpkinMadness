@@ -20,7 +20,7 @@ public class GroundEnemyMovement : MonoBehaviour
     [SerializeField] private int aggroJumpCoolDownReduction;
 
     private const float groundCheckRadius = 0f;
-    private Vector3 groundCheckCoordinateOffset = new Vector3(0f, -.5f, 0f);
+    private Vector3 groundCheckCoordinateOffset = new Vector3(0f, -.7f, 0f);
     
     private float direction = 1f;
     private bool jumpOnCoolDown;

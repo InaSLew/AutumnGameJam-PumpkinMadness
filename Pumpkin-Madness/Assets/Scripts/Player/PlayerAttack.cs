@@ -5,8 +5,8 @@ using UnityEngine;
 
 public class PlayerAttack : MonoBehaviour
 {
-    private Player player;
-    private Rigidbody2D _rigidbody2D;
+    // private Player player;
+    // private Rigidbody2D _rigidbody2D;
 
     [SerializeField] private int weaponDamage = 0;
     
@@ -14,8 +14,8 @@ public class PlayerAttack : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        _rigidbody2D = GetComponent<Rigidbody2D>();
-        player = FindObjectOfType<Player>();
+        // _rigidbody2D = GetComponent<Rigidbody2D>();
+        // player = FindObjectOfType<Player>();
     }
 
 
