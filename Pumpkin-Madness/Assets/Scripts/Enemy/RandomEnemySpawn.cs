@@ -4,13 +4,13 @@ using Random = UnityEngine.Random;
 public class RandomEnemySpawn : MonoBehaviour
 {
     
-    [SerializeField] private float GroundEnemySpawnInterval = 30f;
-    [SerializeField] private float FlyEnemySpawnInterval = 60f;
-    [SerializeField] private int ExtraGroundEnemyPer30Seconds = 2;
-    [SerializeField] private int ExtraFlyEnemyPer1Minute = 1;
+    [SerializeField] private float GroundEnemySpawnInterval;
+    [SerializeField] private float FlyEnemySpawnInterval;
+    [SerializeField] private int ExtraGroundEnemyPer30Seconds;
+    [SerializeField] private int ExtraFlyEnemyPer1Minute;
     [SerializeField] private Enemy groundEnemy;
     [SerializeField] private Enemy flyingEnemy;
-    [SerializeField] private float PumpkinWallSpawnOffset = -3f;
+    [SerializeField] private float PumpkinWallSpawnOffset;
     
     private int GroundEnemyCounter = 0;
     private int FlyingEnemyCounter = 0;
