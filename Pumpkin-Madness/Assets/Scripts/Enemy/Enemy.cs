@@ -53,13 +53,12 @@ public class Enemy : Unit
     
     public override void TakeDamage(int value)
     {
-        Debug.Log($"Enemy takes {value} damage!");
         base.TakeDamage(value);
         
         if (IsDead)
         {
-            FindAndPlayParticle();                     
-            Debug.Log($"Took {value} damage and died!");
+            FindAndPlayParticle();
+            
             // TODO: Add caller to kill count here! --------------------------------------------------------------------
         }
     }

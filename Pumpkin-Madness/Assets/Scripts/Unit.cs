@@ -1,21 +1,34 @@
 using System;
+using System.Collections;
 using UnityEngine;
 
 public abstract class Unit : MonoBehaviour
 {
     [SerializeField] private int MaxHealth;
     [SerializeField] protected int DamagePower;
+    [SerializeField] private Sprite regularSprite;
+    [SerializeField] private Sprite damageTakenSprite;
+    [SerializeField] private float invulnerabilityTime;
+    [SerializeField] private float redFlashDuration;
+    
+    private SpriteRenderer spriteRenderer;
+    private bool isInvulnerable;
     
     
     protected Unit()
     {
     }
 
+    
+    
     private void Start()
     {
         health = MaxHealth;
+        spriteRenderer = GetComponentInChildren<SpriteRenderer>();
     }
 
+    
+    
     public bool IsAlive => health > 0;
     public bool IsDead => !IsAlive;
     private int health;
@@ -29,7 +42,37 @@ public abstract class Unit : MonoBehaviour
                 Destroy(this.gameObject);
         } 
     }
+    
+    
 
-    public virtual void TakeDamage(int value) => Health -= value;
+    public virtual void TakeDamage(int value)
+    {
+        if (!isInvulnerable)
+        {
+            Health -= value;
+            isInvulnerable = true;
+
+            StartCoroutine(DamageFlashIndicator());
+            Invoke(nameof(InvulnerabilityCooldown), invulnerabilityTime);
+        }
+    }
+    
+    
     protected virtual void Attack(Unit target) => target.TakeDamage(target.DamagePower);
+
+
+
+    IEnumerator DamageFlashIndicator()
+    {
+        spriteRenderer.sprite = damageTakenSprite;
+        yield return new WaitForSeconds(redFlashDuration);
+        spriteRenderer.sprite = regularSprite;
+    }
+    
+    
+    
+    void InvulnerabilityCooldown()
+    {
+        isInvulnerable = false;
+    }
 }
