@@ -5,19 +5,18 @@ using UnityEngine;
 
 public class PlayerAttack : MonoBehaviour
 {
-    // private Player player;
-    // private Rigidbody2D _rigidbody2D;
-
     [SerializeField] private int weaponDamage = 0;
+    [SerializeField] private float MaxThrowDistance;
+    [SerializeField] private float ThrowSpeed;
+    [SerializeField] private float rotationSpeed;
     
+    private bool weaponReturning;
+    private bool weaponThrown = false;
+    private Vector3 weaponTargetPosition;
     
-    // Start is called before the first frame update
-    void Start()
-    {
-        // _rigidbody2D = GetComponent<Rigidbody2D>();
-        // player = FindObjectOfType<Player>();
-    }
 
+    
+    
 
     private void OnTriggerStay2D(Collider2D other)
     {
@@ -37,11 +36,8 @@ public class PlayerAttack : MonoBehaviour
             }
         }
     }
-
-
-    [SerializeField] private float MaxThrowDistance;
-    [SerializeField] private float ThrowSpeed;
-    private bool weaponReturning;
+    
+    
     
     private void Update()
     {
@@ -64,8 +60,11 @@ public class PlayerAttack : MonoBehaviour
     }
 
 
+    
     void ThrowWeapon()
     {
+        transform.Rotate(Vector3.forward * rotationSpeed);
+        
         if (Vector3.Distance(transform.position, transform.parent.position) < MaxThrowDistance && !weaponReturning && transform.position != weaponTargetPosition)
         {
             transform.position = Vector3.MoveTowards(transform.position, weaponTargetPosition, ThrowSpeed);
@@ -76,43 +75,4 @@ public class PlayerAttack : MonoBehaviour
             transform.position = Vector3.MoveTowards(transform.position, transform.parent.position, ThrowSpeed);
         }
     }
-    
-    
-    
-    // bool DistanceCheckToTarget()
-    // {
-    //     return Vector3.Distance(transform.position, player.transform.position) <= aggroRange;
-    // }
-    //
-    //
-    // IEnumerator throwWeapon()
-    // {
-    //     yield return new WaitForSeconds();
-    // }
-    //
-    //
-    private bool weaponThrown = false;
-    // // private bool throwWeapon = true;
-    private Vector3 weaponTargetPosition;
-    // private bool weaponReturnToPlayer;
-    //
-    // public int totalFramesToMoveAway;
-    // private int throwIteration;
-    //
-    // private void FixedUpdate()
-    // {
-    //     if (weaponThrown)
-    //     {
-    //         if (throwIteration < totalFramesToMoveAway)
-    //         {
-    //             transform.position = Vector3.Lerp(transform.position, weaponTargetPosition, 0.1f);
-    //             
-    //             throwIteration++;
-    //         }
-    //         else
-    //         {
-    //             transform.position = Vector3.Lerp(transform.position, transform.parent.position, 0.1f);
-    //         }
-    //     }
-    // }
 }
