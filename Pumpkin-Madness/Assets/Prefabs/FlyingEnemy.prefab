@@ -137,7 +137,6 @@ MonoBehaviour:
   damageTakenSprite: {fileID: 21300000, guid: 7d24be520342f9148a9142f4fa965e82, type: 3}
   invulnerabilityTime: 0.5
   redFlashDuration: 0.25
-  hurtParticle: {fileID: 2100000, guid: 3c399053e2d587545ae6a3dfe7eee231, type: 2}
   deathParticle: {fileID: 2100000, guid: cf008fdb659879f48bfc877f5673dbf0, type: 2}
 --- !u!50 &2593576565159457643
 Rigidbody2D:
@@ -5360,7 +5359,7 @@ ParticleSystem:
       serializedVersion: 2
       minMaxState: 0
       minColor: {r: 1, g: 1, b: 1, a: 1}
-      maxColor: {r: 0.9056604, g: 0.65125525, b: 0.33663222, a: 1}
+      maxColor: {r: 0, g: 0.8392315, b: 0.9716981, a: 1}
       maxGradient:
         serializedVersion: 2
         key0: {r: 1, g: 1, b: 1, a: 1}
@@ -6434,7 +6433,7 @@ ParticleSystem:
         m_RotationOrder: 4
     separateAxes: 0
   ColorModule:
-    enabled: 0
+    enabled: 1
     gradient:
       serializedVersion: 2
       minMaxState: 1
@@ -6442,17 +6441,17 @@ ParticleSystem:
       maxColor: {r: 1, g: 1, b: 1, a: 1}
       maxGradient:
         serializedVersion: 2
-        key0: {r: 1, g: 1, b: 1, a: 1}
-        key1: {r: 1, g: 1, b: 1, a: 1}
-        key2: {r: 0, g: 0, b: 0, a: 0}
+        key0: {r: 0.64891416, g: 0.85535455, b: 0.9245283, a: 1}
+        key1: {r: 0.0024563416, g: 0.5212458, b: 0.6509434, a: 1}
+        key2: {r: 1, g: 1, b: 1, a: 0}
         key3: {r: 0, g: 0, b: 0, a: 0}
         key4: {r: 0, g: 0, b: 0, a: 0}
         key5: {r: 0, g: 0, b: 0, a: 0}
         key6: {r: 0, g: 0, b: 0, a: 0}
         key7: {r: 0, g: 0, b: 0, a: 0}
         ctime0: 0
-        ctime1: 65535
-        ctime2: 0
+        ctime1: 64379
+        ctime2: 65535
         ctime3: 0
         ctime4: 0
         ctime5: 0
@@ -6467,7 +6466,7 @@ ParticleSystem:
         atime6: 0
         atime7: 0
         m_Mode: 0
-        m_NumColorKeys: 2
+        m_NumColorKeys: 3
         m_NumAlphaKeys: 2
       minGradient:
         serializedVersion: 2
