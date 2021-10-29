@@ -38,6 +38,7 @@ public class Player : MonoBehaviour
         if (currentHealth<=0)
         {
             Destroy(gameObject);
+            Destroy(GameObject.FindGameObjectWithTag("Weapon"));
         }
         // StartCoroutine(BecomeTemporarilyInvincible());
         MethodThatTriggersInvulnerability();
