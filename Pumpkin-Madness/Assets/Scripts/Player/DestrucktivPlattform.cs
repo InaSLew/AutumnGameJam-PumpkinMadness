@@ -1,49 +1,23 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
-using System.Threading;
 using UnityEngine;
 
 public class DestrucktivPlattform : MonoBehaviour
 {
-    public float timer;
-    
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    private const float CoolDown = 4f;
 
-    // Update is called once per frame
-    void Update()
-    {
-    }
-
-    private void OnCollisionStay2D(Collision2D other)
-    {
-        if (other.gameObject.tag == "Player" )
-        {
-            // Thread.Sleep(4500);
-            Invoke(nameof(Test), timer);
-            StartCoroutine(waitSecounds());
-        }
-        
-    }
-
-    private void Test()
-    {
-        gameObject.SetActive(false);
-        
-    }
-
-    private void Test2()
+    private void EnablePlatform()
     {
         gameObject.SetActive(true);
     }
 
-    IEnumerator waitSecounds()
+    private void OnCollisionEnter2D(Collision2D other)
     {
-        yield return new WaitForSeconds(4);
-        Invoke(nameof(Test2), timer);
+        if (other.gameObject.CompareTag("Player"))
+            Invoke(nameof(DisablePlatform), CoolDown);
+    }
+
+    private void DisablePlatform()
+    {
+        gameObject.SetActive(false);
+        Invoke(nameof(EnablePlatform), CoolDown);
     }
 }
