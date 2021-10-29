@@ -11,7 +11,6 @@ public class DestrucktivPlattform : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Player"))
         {
-            print("Does this Work inside triggerenter");
             Invoke(nameof(DisablePlatform) ,CoolDown);
             destroyPlatform = true;
         }
@@ -22,7 +21,6 @@ public class DestrucktivPlattform : MonoBehaviour
         if (other.gameObject.CompareTag("Player"))
         {
             destroyPlatform = false;
-            Debug.Log("Does this bitch work?");
         }
         
     }
@@ -32,33 +30,8 @@ public class DestrucktivPlattform : MonoBehaviour
         gameObject.SetActive(true);
     }
 
-    // private void Update()
-    // {
-    //     if (currenttime==startTime)
-    //     {
-    //         Debug.Log("hello2");
-    //         DisablePlatform();
-    //     }
-    //     else if (currenttime>5)
-    //     {
-    //         currenttime = 0;
-    //     }
-    //     else if (currenttime<5)
-    //     {
-    //         Debug.Log("hello1");
-    //         currenttime+= 1 *Time.deltaTime;
-    //     }
-    // }
-
-    // private void OnCollisionEnter2D(Collision2D other)
-    // {
-    //     if (other.gameObject.CompareTag("Player"))
-    //         Invoke(nameof(DisablePlatform), CoolDown);
-    // }
-    //
     private void DisablePlatform()
     {
-        Debug.Log(destroyPlatform+"hej");
         if (destroyPlatform)
         {
             Debug.Log(destroyPlatform);
