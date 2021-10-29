@@ -12,10 +12,10 @@ public class RandomEnemySpawn : MonoBehaviour
     [SerializeField] private Enemy flyingEnemy;
     [SerializeField] private float PumpkinWallSpawnOffset = -3f;
     
-    private static int GroundEnemyCounter = 0;
-    private static int FlyingEnemyCounter = 0;
-    private static int GroundEnemyCap = 4;
-    private static int FlyEnemyCap = 2;
+    private int GroundEnemyCounter = 0;
+    private int FlyingEnemyCounter = 0;
+    private int GroundEnemyCap = 4;
+    private int FlyEnemyCap = 2;
     
     private bool shouldSpawn = false;
     private GameObject[] spawnWalls;
@@ -58,7 +58,6 @@ public class RandomEnemySpawn : MonoBehaviour
     private void ScaleGroundEnemySpawnRate()
     {
         if (!shouldSpawn || player == null) return;
-        Debug.Log("get this: TIME TO RAMP IT UP!");
         GroundEnemyCap += ExtraGroundEnemyPer30Seconds;
         GroundEnemyCounter = 0;
         SpawnGroundEnemy();
@@ -88,7 +87,6 @@ public class RandomEnemySpawn : MonoBehaviour
         {
             var enemy = Instantiate(groundEnemy);
             enemy.transform.position = GetSpawnPositionFromSky();
-            Debug.Log("Ground enemy instantiated!!");
             GroundEnemyCounter++;
         }
     }
