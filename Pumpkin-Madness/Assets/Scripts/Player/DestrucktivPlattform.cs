@@ -5,7 +5,7 @@ public class DestrucktivPlattform : MonoBehaviour
 {
     private const float CoolDown = 4f;
     private bool destroyPlatform;
-    private float startTime =5;
+    public float startTime =5;
 
     private void OnTriggerEnter2D(Collider2D other)
     {
