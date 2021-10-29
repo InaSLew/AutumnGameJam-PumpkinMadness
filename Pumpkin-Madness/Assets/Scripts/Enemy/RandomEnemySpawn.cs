@@ -6,7 +6,8 @@ public class RandomEnemySpawn : MonoBehaviour
     
     [SerializeField] private float GroundEnemySpawnInterval = 30f;
     [SerializeField] private float FlyEnemySpawnInterval = 60f;
-    [SerializeField] private int scaleRate = 1;
+    [SerializeField] private int ExtraGroundEnemyPer30Seconds = 2;
+    [SerializeField] private int ExtraFlyEnemyPer1Minute = 1;
     [SerializeField] private Enemy groundEnemy;
     [SerializeField] private Enemy flyingEnemy;
     [SerializeField] private float PumpkinWallSpawnOffset = -3f;
@@ -42,31 +43,31 @@ public class RandomEnemySpawn : MonoBehaviour
         if (flyEnemySpawnTimer > FlyEnemySpawnInterval)
         {
             flyEnemySpawnTimer = 0f;
-            SpawnOneMoreFlyEnemy();
+            ScaleFlyEnemySpawnRate();
         }
     }
 
-    private void SpawnOneMoreFlyEnemy()
+    private void ScaleFlyEnemySpawnRate()
     {
         if (!shouldSpawn || player == null) return;
-        FlyEnemyCap = 1;
+        FlyEnemyCap += ExtraFlyEnemyPer1Minute;
         FlyingEnemyCounter = 0;
         SpawnFlyingEnemy();
+    }
+    
+    private void ScaleGroundEnemySpawnRate()
+    {
+        if (!shouldSpawn || player == null) return;
+        Debug.Log("get this: TIME TO RAMP IT UP!");
+        GroundEnemyCap += ExtraGroundEnemyPer30Seconds;
+        GroundEnemyCounter = 0;
+        SpawnGroundEnemy();
     }
 
     private void PopulateAllSpawnCollections()
     {
         spawnWalls = GameObject.FindGameObjectsWithTag("SpawnWall");
         spawnsInSky = GameObject.FindGameObjectsWithTag("SpawnSky");
-    }
-
-    private void ScaleGroundEnemySpawnRate()
-    {
-        if (!shouldSpawn || player == null) return;
-        Debug.Log("get this: TIME TO RAMP IT UP!");
-        GroundEnemyCap += scaleRate;
-        GroundEnemyCounter = 0;
-        SpawnGroundEnemy();
     }
 
     internal void SpawnEnemies(bool isToSpawn) {
