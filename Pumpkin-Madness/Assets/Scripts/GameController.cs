@@ -1,8 +1,10 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameController : MonoBehaviour
 {
     private RandomEnemySpawn randomEnemySpawn;
+    private const float SecondsBeforeReloadToTitleScreen = 3f;
 
     private void Awake()
     {
@@ -13,4 +15,8 @@ public class GameController : MonoBehaviour
     {
         randomEnemySpawn.SpawnEnemies(true);
     }
+
+    internal void LoadSceneWithDelay() => Invoke(nameof(ReloadTitleScreen), SecondsBeforeReloadToTitleScreen);
+
+    private void ReloadTitleScreen() => SceneManager.LoadScene("TitleScreen");
 }
