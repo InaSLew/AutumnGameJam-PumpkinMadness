@@ -1,15 +1,16 @@
-using System;
-using System.Collections.Generic;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
 public class RandomEnemySpawn : MonoBehaviour
 {
+    private const float PumpkinWallSpawnOffset = 1.5f;
+    
     public static int GroundEnemyCounter = 0;
     public static int FlyingEnemyCounter = 0;
-    public static int TotalEnemyCap = 10;
-    public static int GroundEnemyCap = Convert.ToInt32(TotalEnemyCap * 0.6);
-    public static int FlyEnemyCap = Convert.ToInt32(TotalEnemyCap * 0.4);
+    public static int GroundEnemyCap = 4;
+    public static int FlyEnemyCap = 2;
+
+    public float EnemySpawnScaler = 30f;
     
     public bool shouldSpawn = false;
     public Enemy groundEnemy;
@@ -17,20 +18,36 @@ public class RandomEnemySpawn : MonoBehaviour
     private GameObject[] spawnWalls;
     private GameObject[] spawnsInSky;
     private GameObject player;
-    // private const int TutorialPhaseGroundEnemyCap = 3;
-    // private const int TutorialPhaseFlyingEnemyCap = 2;
-    private const float PumpkinWallSpawnOffset = 1.5f;
+    private float timer = 0f;
 
     private void Awake()
     {
-        PupulateAllSpawnCollectoins();
+        PopulateAllSpawnCollectoins();
         InvokeRepeating(nameof(SpawnEnemy), 0.5f, 0.8f);
     }
 
-    private void PupulateAllSpawnCollectoins()
+    private void Update()
+    {
+        timer += Time.deltaTime;
+        if (timer > EnemySpawnScaler)
+        {
+            timer = 0f;
+            InvokeRepeating(nameof(ScaleEnemySpawnRate), 0.2f, EnemySpawnScaler);
+        }
+    }
+
+    private void PopulateAllSpawnCollectoins()
     {
         spawnWalls = GameObject.FindGameObjectsWithTag("SpawnWall");
         spawnsInSky = GameObject.FindGameObjectsWithTag("SpawnSky");
+    }
+
+    private void ScaleEnemySpawnRate()
+    {
+        if (!shouldSpawn || player == null) return;
+        Debug.Log("get this: TIME TO RAMP IT UP!");
+        GroundEnemyCap = Mathf.RoundToInt(1.13f * GroundEnemyCap);
+        GroundEnemyCounter = 0;
     }
 
     internal void SpawnEnemies(bool isToSpawn) {
@@ -41,6 +58,12 @@ public class RandomEnemySpawn : MonoBehaviour
     private void SpawnEnemy()
     {
         if (!shouldSpawn || player == null) return;
+
+        Debug.Log("Ground enemy counter: " + GroundEnemyCounter);
+        Debug.Log("get this Ground enemy cap: " + GroundEnemyCap);
+        Debug.Log("Fly enemy counter: " + FlyingEnemyCounter);
+        Debug.Log("get this Fly enemy cap: " + FlyEnemyCap);
+        
         if (GroundEnemyCounter < GroundEnemyCap) SpawnGroundEnemy();
         if (FlyingEnemyCounter < FlyEnemyCap) SpawnFlyingEnemy();
     }
