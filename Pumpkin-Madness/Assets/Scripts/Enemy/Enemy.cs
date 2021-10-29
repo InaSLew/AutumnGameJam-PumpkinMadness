@@ -11,14 +11,17 @@ public class Enemy : Unit
 
     public int SpawnId { get; }
     
-    
-    private GameObject player;
+    [SerializeField] private Material deathParticle;
 
+    private GameObject player;
+    private ParticleSystem ps;
+    private ParticleSystemRenderer psr;
 
     void FindAndPlayParticle ()
     {
         // This makes every enemy explode on death
-        ParticleSystem ps = GameObject.Find("PlayerWeapon").GetComponent<ParticleSystem>();
+
+        psr.material = deathParticle;
         ps.Play();
     }
 
@@ -29,6 +32,10 @@ public class Enemy : Unit
         // Make the player the target for the ai.
         if (TryGetComponent(out AIDestinationSetter destinationSetter))
             destinationSetter.target = player.transform;
+        
+        
+        ps = GameObject.Find("PlayerWeapon").GetComponent<ParticleSystem>();
+        psr = GameObject.Find("PlayerWeapon").GetComponent<ParticleSystemRenderer>();
     }
 
     
