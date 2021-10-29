@@ -2,6 +2,8 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class Player : MonoBehaviour
 {
@@ -15,6 +17,7 @@ public class Player : MonoBehaviour
     public Sprite Transparent;
     private SpriteRenderer spriteRenderer;
     public Sprite NotTransparent;
+    public WastedUI WastedUI;
     
     
     
@@ -39,6 +42,9 @@ public class Player : MonoBehaviour
         {
             Destroy(gameObject);
             Destroy(GameObject.FindGameObjectWithTag("Weapon"));
+            WastedUI.gameObject.SetActive(true);
+            Time.timeScale = 0f;
+
         }
         // StartCoroutine(BecomeTemporarilyInvincible());
         MethodThatTriggersInvulnerability();
