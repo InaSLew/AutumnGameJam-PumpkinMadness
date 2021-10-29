@@ -45,6 +45,8 @@ public class PlayerAttack : MonoBehaviour
     
     private void Update()
     {
+        transform.Rotate(Vector3.forward * rotationSpeed);
+        
         if (weaponThrown)
         {
             ThrowWeapon();
@@ -66,8 +68,6 @@ public class PlayerAttack : MonoBehaviour
     
     void ThrowWeapon()
     {
-        transform.Rotate(Vector3.forward * rotationSpeed);
-        
         if (Vector3.Distance(transform.position, transform.parent.position) < MaxThrowDistance && !weaponReturning && transform.position != weaponTargetPosition)
         {
             transform.position = Vector3.MoveTowards(transform.position, weaponTargetPosition, ThrowSpeed);
