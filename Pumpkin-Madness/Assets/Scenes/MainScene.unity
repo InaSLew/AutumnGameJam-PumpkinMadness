@@ -15850,6 +15850,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Destr platform (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 1393905832129558839, guid: f3d3a114410c65f4d85ecdf75a6ca2d2, type: 3}
+      propertyPath: m_Offset.y
+      value: 0.1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f3d3a114410c65f4d85ecdf75a6ca2d2, type: 3}
 --- !u!1 &454136418
@@ -63456,7 +63460,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0.5, y: 0.50240326}
+  m_AnchoredPosition: {x: 0.49999237, y: 0.50240326}
   m_SizeDelta: {x: -0.47998047, y: -0.5019989}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1633294722
