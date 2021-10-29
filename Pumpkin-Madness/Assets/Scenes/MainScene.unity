@@ -36863,8 +36863,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   weaponDamage: 5
   MaxThrowDistance: 5
-  ThrowSpeed: 0.07
-  rotationSpeed: -2
+  ThrowSpeed: 40
+  rotationSpeed: 250
   weaponThrown: 0
 --- !u!199 &1423799398
 ParticleSystemRenderer:
