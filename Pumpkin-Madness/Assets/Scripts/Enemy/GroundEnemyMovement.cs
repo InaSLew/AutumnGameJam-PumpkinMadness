@@ -41,7 +41,7 @@ public class GroundEnemyMovement : MonoBehaviour
         {
             if (CheckIfGrounded())
             {
-                if (DistanceCheckToTarget())
+                if (player != null && DistanceCheckToTarget())
                 {
                     // Aggressive targeted movement.
                     if (player.transform.position.x > transform.position.x)

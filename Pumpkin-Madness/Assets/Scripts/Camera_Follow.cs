@@ -13,14 +13,16 @@ public class Camera_Follow : MonoBehaviour
     [SerializeField] private float maximumY;
 
     private Vector3 targetVector3;
-    
-    
-    
-    
-    
+    private GameObject player;
+
+    private void Awake()
+    {
+        player = GameObject.FindGameObjectWithTag("Player");
+    }
+
     private void Update()
     {
-        MoveCameraV2();
+        if (player != null) MoveCameraV2();
     }
     
     
