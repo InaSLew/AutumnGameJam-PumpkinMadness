@@ -50,6 +50,7 @@ public class PlayerAttack : MonoBehaviour
             if (throwIteration < totalFramesToMoveAway)
             {
                 transform.position = Vector3.Lerp(transform.position, weaponTargetPosition, 0.1f);
+                
                 throwIteration++;
             }
             else
