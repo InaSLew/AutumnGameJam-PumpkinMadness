@@ -45,7 +45,7 @@ public class PlayerAttack : MonoBehaviour
     
     private void Update()
     {
-        transform.Rotate(Vector3.forward * rotationSpeed);
+        transform.Rotate(Vector3.forward * rotationSpeed * Time.deltaTime);
         
         if (weaponThrown)
         {
@@ -70,12 +70,12 @@ public class PlayerAttack : MonoBehaviour
     {
         if (Vector3.Distance(transform.position, transform.parent.position) < MaxThrowDistance && !weaponReturning && transform.position != weaponTargetPosition)
         {
-            transform.position = Vector3.MoveTowards(transform.position, weaponTargetPosition, ThrowSpeed);
+            transform.position = Vector3.MoveTowards(transform.position, weaponTargetPosition, ThrowSpeed * Time.deltaTime);
         }
         else
         {
             weaponReturning = true;
-            transform.position = Vector3.MoveTowards(transform.position, transform.parent.position, ThrowSpeed);
+            transform.position = Vector3.MoveTowards(transform.position, transform.parent.position, ThrowSpeed * Time.deltaTime);
             if (transform.position == transform.parent.position)
             {
                 weaponThrown = false;

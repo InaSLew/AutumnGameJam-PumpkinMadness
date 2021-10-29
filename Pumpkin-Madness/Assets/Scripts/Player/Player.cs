@@ -10,7 +10,7 @@ public class Player : MonoBehaviour
     public int maxHealth = 100;
     public int currentHealth;
     private bool Enemy;
-    private bool isInvincible = false; 
+    private bool isInvincible = false;
     [SerializeField] private float invincibilityDurationSeconds;
     // [SerializeField] private float invincibilityDeltaTime;
     public HealthBarID HealthBarID;
@@ -18,10 +18,7 @@ public class Player : MonoBehaviour
     private SpriteRenderer spriteRenderer;
     public Sprite NotTransparent;
     public WastedUI WastedUI;
-    
-    
-    
-    
+
     void Start()
     {
         currentHealth = maxHealth;
@@ -38,15 +35,13 @@ public class Player : MonoBehaviour
 
         currentHealth -= damage;
         HealthBarID.SetHealth(currentHealth);
-        if (currentHealth<=0)
+        if (currentHealth <= 0)
         {
             Destroy(gameObject);
             Destroy(GameObject.FindGameObjectWithTag("Weapon"));
             WastedUI.gameObject.SetActive(true);
-            // Time.timeScale = 0f;
-
+            SceneManager.LoadScene("TitleScreen");
         }
-        // StartCoroutine(BecomeTemporarilyInvincible());
         MethodThatTriggersInvulnerability();
     }
     
