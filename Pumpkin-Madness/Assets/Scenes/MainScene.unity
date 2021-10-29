@@ -15820,6 +15820,7 @@ GameObject:
   - component: {fileID: 454136426}
   - component: {fileID: 454136422}
   - component: {fileID: 454136421}
+  - component: {fileID: 454136427}
   m_Layer: 6
   m_Name: Player
   m_TagString: Player
@@ -16061,8 +16062,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 454136418}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.05, y: -2.64, z: -0.1}
-  m_LocalScale: {x: 0.3, y: 0.3, z: 1}
+  m_LocalPosition: {x: -0.0669, y: -2.6118, z: -0.1}
+  m_LocalScale: {x: 0.30351, y: 0.29412, z: 1}
   m_Children:
   - {fileID: 1081029717}
   - {fileID: 936141706}
@@ -16087,6 +16088,32 @@ MonoBehaviour:
   HealthBarID: {fileID: 942604434}
   Transparent: {fileID: 21300000, guid: 5800a735c3540dc4e8c867db267595ed, type: 3}
   NotTransparent: {fileID: 21300000, guid: 26edfe4031737b147bba09808a68296d, type: 3}
+--- !u!61 &454136427
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 454136418}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.09285855, y: -1.8907092}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 9.6, y: 9.6}
+    newSize: {x: 1, y: 1}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 2.1341972, y: 2.112656}
+  m_EdgeRadius: 0
 --- !u!1 &477088609
 GameObject:
   m_ObjectHideFlags: 0
@@ -53240,6 +53267,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   weaponDamage: 5
+  totalFramesToMoveAway: 0
 --- !u!199 &1423799398
 ParticleSystemRenderer:
   serializedVersion: 6
