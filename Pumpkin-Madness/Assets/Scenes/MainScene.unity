@@ -10743,6 +10743,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 135d3d13001abc947a610cc15c17fc81, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  EnemySpawnScaler: 30
+  scaleRate: 1.13
   shouldSpawn: 0
   groundEnemy: {fileID: -5004454507121452738, guid: eb06f71367cd44e46b6fd5df06aabdfb, type: 3}
   flyingEnemy: {fileID: 8924721309400034330, guid: a48659bb504cf12469611e575bf109d1, type: 3}
@@ -53143,6 +53145,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   weaponDamage: 5
+  totalFramesToMoveAway: 0
 --- !u!199 &1423799398
 ParticleSystemRenderer:
   serializedVersion: 6
