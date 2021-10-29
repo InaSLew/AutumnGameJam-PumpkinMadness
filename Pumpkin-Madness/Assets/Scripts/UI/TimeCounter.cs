@@ -21,6 +21,6 @@ public class TimeCounter : MonoBehaviour
         float t = Time.time - startTimer;
         string minutes = ((int) t / 60).ToString();
         string secounds = (t % 60).ToString("f1");
-        timeCounter.text = "Time:"+minutes + ":" + secounds;
+        timeCounter.text = "Time:  "+minutes + ":" + secounds;
     }
 }
