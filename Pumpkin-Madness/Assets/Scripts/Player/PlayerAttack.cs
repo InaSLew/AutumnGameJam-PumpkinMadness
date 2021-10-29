@@ -11,12 +11,16 @@ public class PlayerAttack : MonoBehaviour
     [SerializeField] private float rotationSpeed;
     
     private bool weaponReturning;
-    private bool weaponThrown = false;
+    public bool weaponThrown = false;
     private Vector3 weaponTargetPosition;
-    
+    private GameObject player;
 
-    
-    
+
+    private void Start()
+    {
+        player = GameObject.FindWithTag("Player");
+    }
+
 
     private void OnTriggerStay2D(Collider2D other)
     {
@@ -41,6 +45,10 @@ public class PlayerAttack : MonoBehaviour
     
     private void Update()
     {
+        if (weaponThrown)
+        {
+            ThrowWeapon();
+        }
         if (Input.GetMouseButtonDown(0))
         {
             if (!weaponThrown)
@@ -51,11 +59,6 @@ public class PlayerAttack : MonoBehaviour
                 weaponTargetPosition = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Camera>().ScreenToWorldPoint(mousePosition);
                 weaponThrown = true;
             }
-        }
-
-        if (weaponThrown)
-        {
-            ThrowWeapon();
         }
     }
 
@@ -73,6 +76,11 @@ public class PlayerAttack : MonoBehaviour
         {
             weaponReturning = true;
             transform.position = Vector3.MoveTowards(transform.position, transform.parent.position, ThrowSpeed);
+            if (transform.position == transform.parent.position)
+            {
+                weaponThrown = false;
+                weaponReturning = false;
+            }
         }
     }
 }
