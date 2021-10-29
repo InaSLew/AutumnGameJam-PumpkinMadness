@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Pathfinding;
 using UnityEngine;
+using UnityEngine.SocialPlatforms.Impl;
 
 public class Enemy : Unit
 {
@@ -10,32 +11,23 @@ public class Enemy : Unit
     public Enemy() : base() {}
 
     public int SpawnId { get; }
+    private ScoreCounterUI scoreCounterUI;
     
-    [SerializeField] private Material deathParticle;
-
     private GameObject player;
-    private ParticleSystem ps;
-    private ParticleSystemRenderer psr;
-
     void FindAndPlayParticle ()
     {
         // This makes every enemy explode on death
-
-        psr.material = deathParticle;
+        ParticleSystem ps = GameObject.Find("PlayerWeapon").GetComponent<ParticleSystem>();
         ps.Play();
     }
-
-
     private void Awake()
     {      
         player = GameObject.FindGameObjectWithTag("Player");        
         // Make the player the target for the ai.
         if (TryGetComponent(out AIDestinationSetter destinationSetter))
             destinationSetter.target = player.transform;
-        
-        
-        ps = GameObject.Find("PlayerWeapon").GetComponent<ParticleSystem>();
-        psr = GameObject.Find("PlayerWeapon").GetComponent<ParticleSystemRenderer>();
+
+        Debug.Log(IsDead);
     }
 
     
@@ -66,8 +58,8 @@ public class Enemy : Unit
         
         if (IsDead)
         {
+            ScoreCounterUI.instance.AddKill();
             FindAndPlayParticle();
-            
             // TODO: Add caller to kill count here! --------------------------------------------------------------------
         }
     }
