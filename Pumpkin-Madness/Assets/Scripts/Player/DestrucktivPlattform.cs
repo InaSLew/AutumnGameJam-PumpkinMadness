@@ -5,7 +5,6 @@ public class DestrucktivPlattform : MonoBehaviour
 {
     private const float CoolDown = 4f;
     private bool destroyPlatform;
-    
     private float startTime =5;
 
     private void OnTriggerEnter2D(Collider2D other)
@@ -15,7 +14,6 @@ public class DestrucktivPlattform : MonoBehaviour
             Invoke(nameof(DisablePlatform) ,CoolDown);
             destroyPlatform = true;
         }
-
     }
 
     private void OnTriggerExit2D(Collider2D other)
@@ -23,8 +21,7 @@ public class DestrucktivPlattform : MonoBehaviour
         if (other.gameObject.CompareTag("Player"))
         {
             destroyPlatform = false;
-            
-            
+            Debug.Log("Does this bitch work?");
         }
         
     }
@@ -65,7 +62,6 @@ public class DestrucktivPlattform : MonoBehaviour
             gameObject.SetActive(false);
             Invoke(nameof(EnablePlatform), CoolDown);
             destroyPlatform = false;
-            
         }
         
     }
