@@ -7,6 +7,7 @@ TagManager:
   - Enemy
   - SpawnWall
   - SpawnSky
+  - Weapon
   layers:
   - Default
   - TransparentFX
