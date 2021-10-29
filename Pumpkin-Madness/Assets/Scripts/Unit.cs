@@ -10,7 +10,11 @@ public abstract class Unit : MonoBehaviour
     [SerializeField] private Sprite damageTakenSprite;
     [SerializeField] private float invulnerabilityTime;
     [SerializeField] private float redFlashDuration;
-    
+    [SerializeField] private Material hurtParticle;
+    [SerializeField] private Material deathParticle;
+
+    private ParticleSystemRenderer particleSystemRenderer;
+    private ParticleSystem particleSystem;
     private SpriteRenderer spriteRenderer;
     private bool isInvulnerable;
     
@@ -25,6 +29,9 @@ public abstract class Unit : MonoBehaviour
     {
         health = MaxHealth;
         spriteRenderer = GetComponentInChildren<SpriteRenderer>();
+        particleSystem = GetComponent<ParticleSystem>();
+        particleSystemRenderer = GetComponent<ParticleSystemRenderer>();
+        
     }
 
     
@@ -39,7 +46,9 @@ public abstract class Unit : MonoBehaviour
         {
             health = Mathf.Clamp(value, 0, MaxHealth);
             if (IsDead)
+            {
                 Destroy(this.gameObject);
+            }
         } 
     }
     
@@ -49,11 +58,22 @@ public abstract class Unit : MonoBehaviour
     {
         if (!isInvulnerable)
         {
+            PlayHurtParticle();
+
+
             Health -= value;
             isInvulnerable = true;
 
-            StartCoroutine(DamageFlashIndicator());
-            Invoke(nameof(InvulnerabilityCooldown), invulnerabilityTime);
+            if (IsAlive)
+            {
+                PlayHurtParticle();
+                StartCoroutine(DamageFlashIndicator());
+                Invoke(nameof(InvulnerabilityCooldown), invulnerabilityTime);
+            }
+            else
+            {
+                PlayDeathParticle();
+            }
         }
     }
     
@@ -67,6 +87,22 @@ public abstract class Unit : MonoBehaviour
         spriteRenderer.sprite = damageTakenSprite;
         yield return new WaitForSeconds(redFlashDuration);
         spriteRenderer.sprite = regularSprite;
+    }
+
+
+
+    void PlayHurtParticle()
+    {
+        particleSystem.Stop();
+        particleSystemRenderer.material = hurtParticle;
+        particleSystem.Play();
+    }
+
+    void PlayDeathParticle()
+    {
+        particleSystem.Stop();
+        particleSystemRenderer.material = deathParticle;
+        particleSystem.Play();
     }
     
     

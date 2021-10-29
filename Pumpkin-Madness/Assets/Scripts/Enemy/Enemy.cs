@@ -13,20 +13,22 @@ public class Enemy : Unit
     
     
     private GameObject player;
+
+
     void FindAndPlayParticle ()
     {
         // This makes every enemy explode on death
         ParticleSystem ps = GameObject.Find("PlayerWeapon").GetComponent<ParticleSystem>();
         ps.Play();
     }
+
+
     private void Awake()
     {      
         player = GameObject.FindGameObjectWithTag("Player");        
         // Make the player the target for the ai.
         if (TryGetComponent(out AIDestinationSetter destinationSetter))
             destinationSetter.target = player.transform;
-
-        Debug.Log(IsDead);
     }
 
     
