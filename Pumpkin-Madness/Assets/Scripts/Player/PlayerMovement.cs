@@ -55,7 +55,7 @@ public class PlayerMovement : MonoBehaviour
     {
 
         bool grounded = playerController.m_Grounded;
-        animator.enabled = false;
+        animator.enabled = true;
 
         float move = Convert.ToSingle(moveLeftRight);
         playerController.Move(move * Time.deltaTime, crouch, jump);
@@ -63,17 +63,19 @@ public class PlayerMovement : MonoBehaviour
         
         if ((moveLeftRight == 0f) && (grounded == true))
         {
-            animator.enabled = true;
+            animator.enabled = false;
+            spriteRenderer.sprite = defaultSkin;
         }
 
         if (grounded != true)
         {
+            animator.enabled = false;
             spriteRenderer.sprite = jumpingSkin;
         }
 
-        if (grounded == true)
+        else if ((moveLeftRight != 0f) && (grounded == true))
         {
-            spriteRenderer.sprite = defaultSkin;
+            animator.enabled = true;
         }
     }
 }
