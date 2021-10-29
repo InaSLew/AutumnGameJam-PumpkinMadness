@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.Timeline.Actions;
 using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
@@ -12,11 +13,16 @@ public class PlayerMovement : MonoBehaviour
     bool jump = false;
     bool crouch = false;
     public Animator animator;
+    public SpriteRenderer spriteRenderer;
+    public Sprite defaultSkin;
+    public Sprite jumpingSkin;
 
     void Update()
     {
         
         animator = GetComponent<Animator>();
+        spriteRenderer = GetComponent<SpriteRenderer>();
+        
         if (Input.GetButtonDown("Jump"))
         {
             jump = true;
@@ -51,6 +57,7 @@ public class PlayerMovement : MonoBehaviour
 
         bool grounded = playerController.m_Grounded;
         animator.enabled = false;
+
         float move = Convert.ToSingle(moveLeftRight);
         playerController.Move(move * Time.deltaTime, crouch, jump);
         jump = false;
@@ -58,6 +65,16 @@ public class PlayerMovement : MonoBehaviour
         if ((moveLeftRight == 0f) && (grounded == true))
         {
             animator.enabled = true;
+        }
+
+        if (grounded != true)
+        {
+            spriteRenderer.sprite = jumpingSkin;
+        }
+
+        if (grounded == true)
+        {
+            spriteRenderer.sprite = defaultSkin;
         }
     }
 }
