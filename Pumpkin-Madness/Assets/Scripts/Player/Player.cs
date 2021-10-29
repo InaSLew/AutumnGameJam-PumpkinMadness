@@ -1,23 +1,25 @@
-using System;
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
 public class Player : MonoBehaviour
 {
-    public int maxHealth = 100;
+    [SerializeField] private int maxHealth;
     public int currentHealth;
     private bool Enemy;
     private bool isInvincible = false;
     [SerializeField] private float invincibilityDurationSeconds;
-    // [SerializeField] private float invincibilityDeltaTime;
+    [SerializeField] private GameObject gameOverTitle;
     public HealthBarID HealthBarID;
     public Sprite Transparent;
     private SpriteRenderer spriteRenderer;
     public Sprite NotTransparent;
-    public WastedUI WastedUI;
+    private GameController gameController;
+
+    private void Awake()
+    {
+        gameController = GameObject.FindObjectOfType<GameController>();
+    }
 
     void Start()
     {
@@ -25,8 +27,6 @@ public class Player : MonoBehaviour
         HealthBarID.SetMaxHealth(maxHealth);
         spriteRenderer = GetComponentInChildren<SpriteRenderer>();
     }
-    
-    
 
     public void TakeDamage(int damage)
     {
@@ -39,13 +39,18 @@ public class Player : MonoBehaviour
         {
             Destroy(gameObject);
             Destroy(GameObject.FindGameObjectWithTag("Weapon"));
-            WastedUI.gameObject.SetActive(true);
-            SceneManager.LoadScene("TitleScreen");
+            ShowGameOver();
         }
         MethodThatTriggersInvulnerability();
     }
-    
-    
+
+    private void ShowGameOver()
+    {
+        gameOverTitle.SetActive(true);
+        gameController.LoadSceneWithDelay();
+    }
+
+    private void LoadTitleScreen() => SceneManager.LoadScene("TitleScreen");
     
     void MethodThatTriggersInvulnerability()
     {
@@ -54,9 +59,7 @@ public class Player : MonoBehaviour
             StartCoroutine(BecomeTemporarilyInvincible());
         }
     }
-    
-    
-    
+
     private IEnumerator BecomeTemporarilyInvincible()
     {
         Debug.Log("Player turned invincible!");
@@ -65,18 +68,6 @@ public class Player : MonoBehaviour
         var temp = 0;
         for (float i = 0; i < invincibilityDurationSeconds; i += 0.2f)
         {
-            // // Alternate between 0 and 1 scale to simulate flashing
-            // if (gameObject.transform.localScale == Vector3.one)
-            // {
-            //     ScaleModelTo(Vector3.zero);
-            //     Debug.Log("One");
-            // }
-            // else
-            // {
-            //     ScaleModelTo(Vector3.one);
-            //     Debug.Log("two");
-            // }
-
             if (temp == 2)
             {
                 temp = 0;
@@ -94,13 +85,9 @@ public class Player : MonoBehaviour
         Debug.Log("Player is no longer invincible!");
         isInvincible = false;
     }
-    
-    
-    
+
     private void ScaleModelTo(Vector3 scale)
     {
         gameObject.transform.localScale = scale;
     }
-    
-    
 }
