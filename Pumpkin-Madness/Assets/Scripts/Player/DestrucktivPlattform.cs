@@ -5,13 +5,13 @@ public class DestrucktivPlattform : MonoBehaviour
 {
     private const float CoolDown = 4f;
     private bool destroyPlatform;
-    public float startTime =5;
+    private float startTime =2;
 
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.gameObject.CompareTag("Player"))
         {
-            Invoke(nameof(DisablePlatform) ,CoolDown);
+            Invoke(nameof(DisablePlatform) ,startTime);
             destroyPlatform = true;
         }
     }
