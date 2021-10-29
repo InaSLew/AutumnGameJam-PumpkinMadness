@@ -221,4 +221,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MaxHealth: 50
-  DamagePower: 50
+  DamagePower: 25
