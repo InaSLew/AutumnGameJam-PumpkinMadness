@@ -11,13 +11,16 @@ public class PlayerMovement : MonoBehaviour
     double moveLeftRight = 0f;
     bool jump = false;
     bool crouch = false;
+    public Animator animator;
 
     void Update()
     {
-       
+        
+        animator = GetComponent<Animator>();
         if (Input.GetButtonDown("Jump"))
         {
             jump = true;
+            animator.enabled = false;
         }
 
         if (Input.GetButtonDown("Crouch"))
@@ -34,6 +37,7 @@ public class PlayerMovement : MonoBehaviour
         if (Input.GetKeyDown("left shift") && (crouch !=true))
         {
             walkSpeed = walkSpeed * runMultiplier;
+
         }
         
         else if (Input.GetKeyUp("left shift"))
@@ -45,8 +49,15 @@ public class PlayerMovement : MonoBehaviour
     void FixedUpdate()
     {
 
+        bool grounded = playerController.m_Grounded;
+        animator.enabled = false;
         float move = Convert.ToSingle(moveLeftRight);
         playerController.Move(move * Time.deltaTime, crouch, jump);
         jump = false;
+        
+        if ((moveLeftRight == 0f) && (grounded == true))
+        {
+            animator.enabled = true;
+        }
     }
 }

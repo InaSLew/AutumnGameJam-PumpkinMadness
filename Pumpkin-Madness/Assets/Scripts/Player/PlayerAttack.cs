@@ -28,40 +28,21 @@ public class PlayerAttack : MonoBehaviour
         
         if (other.gameObject.CompareTag("Player"))
         {
-            if (weaponThrown && throwIteration < totalFramesToMoveAway)
-            transform.position = transform.parent.position;
-            weaponThrown = false;
-            throwIteration = 0;
-        }
-    }
-
-
-
-    private bool weaponThrown = false;
-    private bool throwWeapon = true;
-    private Vector3 weaponTargetPosition;
-    private bool weaponReturnToPlayer;
-
-    public int totalFramesToMoveAway;
-    private int throwIteration;
-
-    private void FixedUpdate()
-    {
-        if (weaponThrown)
-        {
-            if (throwIteration < totalFramesToMoveAway)
+            if (weaponThrown && weaponReturning)
             {
-                transform.position = Vector3.Lerp(transform.position, weaponTargetPosition, 0.1f);
-                
-                throwIteration++;
-            }
-            else
-            {
-                transform.position = Vector3.Lerp(transform.position, transform.parent.position, 0.1f);
+                Debug.Log("Weapon returned!+");
+                transform.position = transform.parent.position;
+                weaponThrown = false;
+                weaponReturning = false;
             }
         }
     }
 
+
+    [SerializeField] private float MaxThrowDistance;
+    [SerializeField] private float ThrowSpeed;
+    private bool weaponReturning;
+    
     private void Update()
     {
         if (Input.GetMouseButtonDown(0))
@@ -75,5 +56,63 @@ public class PlayerAttack : MonoBehaviour
                 weaponThrown = true;
             }
         }
+
+        if (weaponThrown)
+        {
+            ThrowWeapon();
+        }
     }
+
+
+    void ThrowWeapon()
+    {
+        if (Vector3.Distance(transform.position, transform.parent.position) < MaxThrowDistance && !weaponReturning && transform.position != weaponTargetPosition)
+        {
+            transform.position = Vector3.MoveTowards(transform.position, weaponTargetPosition, ThrowSpeed);
+        }
+        else
+        {
+            weaponReturning = true;
+            transform.position = Vector3.MoveTowards(transform.position, transform.parent.position, ThrowSpeed);
+        }
+    }
+    
+    
+    
+    // bool DistanceCheckToTarget()
+    // {
+    //     return Vector3.Distance(transform.position, player.transform.position) <= aggroRange;
+    // }
+    //
+    //
+    // IEnumerator throwWeapon()
+    // {
+    //     yield return new WaitForSeconds();
+    // }
+    //
+    //
+    private bool weaponThrown = false;
+    // // private bool throwWeapon = true;
+    private Vector3 weaponTargetPosition;
+    // private bool weaponReturnToPlayer;
+    //
+    // public int totalFramesToMoveAway;
+    // private int throwIteration;
+    //
+    // private void FixedUpdate()
+    // {
+    //     if (weaponThrown)
+    //     {
+    //         if (throwIteration < totalFramesToMoveAway)
+    //         {
+    //             transform.position = Vector3.Lerp(transform.position, weaponTargetPosition, 0.1f);
+    //             
+    //             throwIteration++;
+    //         }
+    //         else
+    //         {
+    //             transform.position = Vector3.Lerp(transform.position, transform.parent.position, 0.1f);
+    //         }
+    //     }
+    // }
 }
