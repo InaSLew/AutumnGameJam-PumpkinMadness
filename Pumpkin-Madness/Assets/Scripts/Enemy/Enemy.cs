@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Pathfinding;
 using UnityEngine;
+using UnityEngine.SocialPlatforms.Impl;
 
 public class Enemy : Unit
 {
@@ -10,7 +11,7 @@ public class Enemy : Unit
     public Enemy() : base() {}
 
     public int SpawnId { get; }
-    
+    private ScoreCounterUI scoreCounterUI;
     
     private GameObject player;
     void FindAndPlayParticle ()
@@ -57,8 +58,8 @@ public class Enemy : Unit
         
         if (IsDead)
         {
+            ScoreCounterUI.instance.AddKill();
             FindAndPlayParticle();
-            
             // TODO: Add caller to kill count here! --------------------------------------------------------------------
         }
     }
