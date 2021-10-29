@@ -497,7 +497,7 @@ GameObject:
   - component: {fileID: 149607247}
   m_Layer: 3
   m_Name: PumpwallV2 (1)
-  m_TagString: Untagged
+  m_TagString: SpawnWall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -10897,7 +10897,7 @@ GameObject:
   - component: {fileID: 309537012}
   m_Layer: 3
   m_Name: PumpwallV2
-  m_TagString: Untagged
+  m_TagString: SpawnWall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -11243,8 +11243,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 135d3d13001abc947a610cc15c17fc81, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  EnemySpawnScaler: 30
-  shouldSpawn: 0
+  GroundEnemySpawnInterval: 30
+  FlyEnemySpawnInterval: 60
+  scaleRate: 1
   groundEnemy: {fileID: -5004454507121452738, guid: eb06f71367cd44e46b6fd5df06aabdfb, type: 3}
   flyingEnemy: {fileID: 8924721309400034330, guid: a48659bb504cf12469611e575bf109d1, type: 3}
 --- !u!1 &337279808
