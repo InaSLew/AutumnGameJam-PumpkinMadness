@@ -53243,6 +53243,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   weaponDamage: 5
   MaxThrowDistance: 5
+  ThrowSpeed: 0.3
 --- !u!199 &1423799398
 ParticleSystemRenderer:
   serializedVersion: 6

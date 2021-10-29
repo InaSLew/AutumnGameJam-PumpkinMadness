@@ -39,7 +39,8 @@ public class PlayerAttack : MonoBehaviour
     }
 
 
-    [SerializeField] private int MaxThrowDistance;
+    [SerializeField] private float MaxThrowDistance;
+    [SerializeField] private float ThrowSpeed;
     private bool weaponReturning;
     
     private void Update()
@@ -65,14 +66,14 @@ public class PlayerAttack : MonoBehaviour
 
     void ThrowWeapon()
     {
-        if (Vector3.Distance(transform.position, transform.parent.position) < MaxThrowDistance && !weaponReturning)
+        if (Vector3.Distance(transform.position, transform.parent.position) < MaxThrowDistance && !weaponReturning && transform.position != weaponTargetPosition)
         {
-            transform.position = Vector3.MoveTowards(transform.position, weaponTargetPosition, 0.1f);
+            transform.position = Vector3.MoveTowards(transform.position, weaponTargetPosition, ThrowSpeed);
         }
         else
         {
             weaponReturning = true;
-            transform.position = Vector3.MoveTowards(transform.position, transform.parent.position, 0.1f);
+            transform.position = Vector3.MoveTowards(transform.position, transform.parent.position, ThrowSpeed);
         }
     }
     
