@@ -9,8 +9,7 @@ public class RandomEnemySpawn : MonoBehaviour
     [SerializeField] private int scaleRate = 1;
     [SerializeField] private Enemy groundEnemy;
     [SerializeField] private Enemy flyingEnemy;
-
-    private const float PumpkinWallSpawnOffset = 1.5f;
+    [SerializeField] private float PumpkinWallSpawnOffset = -3f;
     
     private static int GroundEnemyCounter = 0;
     private static int FlyingEnemyCounter = 0;
