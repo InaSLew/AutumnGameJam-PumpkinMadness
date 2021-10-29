@@ -11,6 +11,7 @@ public class DestrucktivPlattform : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Player"))
         {
+            print("Does this Work inside triggerenter");
             Invoke(nameof(DisablePlatform) ,CoolDown);
             destroyPlatform = true;
         }
@@ -57,8 +58,10 @@ public class DestrucktivPlattform : MonoBehaviour
     //
     private void DisablePlatform()
     {
-        if (destroyPlatform = true)
+        Debug.Log(destroyPlatform+"hej");
+        if (destroyPlatform)
         {
+            Debug.Log(destroyPlatform);
             gameObject.SetActive(false);
             Invoke(nameof(EnablePlatform), CoolDown);
             destroyPlatform = false;
