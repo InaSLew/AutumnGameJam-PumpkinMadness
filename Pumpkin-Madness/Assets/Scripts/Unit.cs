@@ -10,6 +10,8 @@ public abstract class Unit : MonoBehaviour
     [SerializeField] private Sprite damageTakenSprite;
     [SerializeField] private float invulnerabilityTime;
     [SerializeField] private float redFlashDuration;
+
+    
     
     private SpriteRenderer spriteRenderer;
     private bool isInvulnerable;
@@ -25,6 +27,7 @@ public abstract class Unit : MonoBehaviour
     {
         health = MaxHealth;
         spriteRenderer = GetComponentInChildren<SpriteRenderer>();
+
     }
 
     
@@ -39,7 +42,9 @@ public abstract class Unit : MonoBehaviour
         {
             health = Mathf.Clamp(value, 0, MaxHealth);
             if (IsDead)
+            {
                 Destroy(this.gameObject);
+            }
         } 
     }
     
@@ -49,11 +54,16 @@ public abstract class Unit : MonoBehaviour
     {
         if (!isInvulnerable)
         {
+
+
             Health -= value;
             isInvulnerable = true;
 
-            StartCoroutine(DamageFlashIndicator());
-            Invoke(nameof(InvulnerabilityCooldown), invulnerabilityTime);
+            if (IsAlive)
+            {
+                StartCoroutine(DamageFlashIndicator());
+                Invoke(nameof(InvulnerabilityCooldown), invulnerabilityTime);
+            }
         }
     }
     
@@ -69,8 +79,8 @@ public abstract class Unit : MonoBehaviour
         spriteRenderer.sprite = regularSprite;
     }
     
-    
-    
+
+
     void InvulnerabilityCooldown()
     {
         isInvulnerable = false;

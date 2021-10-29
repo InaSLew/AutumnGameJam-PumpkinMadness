@@ -209,7 +209,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 46036034}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.85, y: 0, z: 0}
+  m_LocalPosition: {x: 1, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1423799394}
@@ -55096,10 +55096,10 @@ GameObject:
   m_Component:
   - component: {fileID: 1423799394}
   - component: {fileID: 1423799396}
-  - component: {fileID: 1423799395}
   - component: {fileID: 1423799397}
   - component: {fileID: 1423799399}
   - component: {fileID: 1423799398}
+  - component: {fileID: 1423799395}
   m_Layer: 0
   m_Name: PlayerWeapon
   m_TagString: Untagged
@@ -55115,8 +55115,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1423799393}
   m_LocalRotation: {x: -0, y: -0, z: 1, w: 0}
-  m_LocalPosition: {x: 0, y: 0.033, z: 0}
-  m_LocalScale: {x: 2, y: 1, z: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1.5, y: 1.5, z: 1}
   m_Children: []
   m_Father: {fileID: 46036035}
   m_RootOrder: 0
@@ -55138,20 +55138,37 @@ PolygonCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 0.5}
-    newSize: {x: 1, y: 1}
+    oldSize: {x: 0.84, y: 0.84}
+    newSize: {x: 0.84, y: 0.84}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: -0.5, y: 0.17999999}
-      - {x: -0.5, y: 0.08}
-      - {x: -0.35, y: -0.13}
-      - {x: 0.5, y: -0.13}
-      - {x: 0.5, y: 0.13}
-      - {x: 0.28, y: 0.17999999}
+    - - {x: 0.42, y: -0.13}
+      - {x: 0.42, y: 0.04}
+      - {x: 0.38, y: 0.13}
+      - {x: 0.41, y: 0.19999999}
+      - {x: 0.38, y: 0.26}
+      - {x: 0.11, y: 0.32999998}
+      - {x: 0.13, y: 0.42}
+      - {x: -0.049999997, y: 0.42}
+      - {x: -0.29, y: 0.35999998}
+      - {x: -0.35, y: 0.29999998}
+      - {x: -0.34, y: 0.11}
+      - {x: -0.42, y: 0.13}
+      - {x: -0.42, y: -0.03}
+      - {x: -0.34, y: -0.13}
+      - {x: -0.42, y: -0.22999999}
+      - {x: -0.42, y: -0.26999998}
+      - {x: -0.29, y: -0.31}
+      - {x: -0.07, y: -0.31}
+      - {x: -0.12, y: -0.38}
+      - {x: -0.12, y: -0.42}
+      - {x: 0.19, y: -0.42}
+      - {x: 0.28, y: -0.38}
+      - {x: 0.32999998, y: -0.099999994}
 --- !u!212 &1423799396
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -55193,12 +55210,12 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 39b3c94e7c751a647b7d281b83b20d62, type: 3}
+  m_Sprite: {fileID: 21300000, guid: b9741d85f88d8e542b0fafd20122eb7a, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 0.84, y: 0.84}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -55218,7 +55235,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   weaponDamage: 5
   MaxThrowDistance: 5
-  ThrowSpeed: 0.2
+  ThrowSpeed: 0.07
+  rotationSpeed: 2
+  weaponThrown: 0
 --- !u!199 &1423799398
 ParticleSystemRenderer:
   serializedVersion: 6

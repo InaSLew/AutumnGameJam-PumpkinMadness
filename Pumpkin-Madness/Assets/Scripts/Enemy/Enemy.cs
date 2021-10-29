@@ -14,14 +14,29 @@ public class Enemy : Unit
     private ScoreCounterUI scoreCounterUI;
     
     private GameObject player;
+    
+
+    [SerializeField] private Material deathParticle;
+    private ParticleSystem ps;
+    private ParticleSystemRenderer psr;
+    
+
     void FindAndPlayParticle ()
     {
         // This makes every enemy explode on death
-        ParticleSystem ps = GameObject.Find("PlayerWeapon").GetComponent<ParticleSystem>();
+
+        psr.material = deathParticle;
         ps.Play();
     }
+
+
+
     private void Awake()
     {      
+        ps = GameObject.Find("PlayerWeapon").GetComponent<ParticleSystem>();
+        psr = GameObject.Find("PlayerWeapon").GetComponent<ParticleSystemRenderer>();
+        
+        
         player = GameObject.FindGameObjectWithTag("Player");        
         // Make the player the target for the ai.
         if (TryGetComponent(out AIDestinationSetter destinationSetter))
