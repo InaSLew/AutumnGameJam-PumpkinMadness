@@ -11,7 +11,6 @@ public class RandomEnemySpawn : MonoBehaviour
     public static int FlyEnemyCap = 2;
 
     public float EnemySpawnScaler = 30f;
-    [SerializeField] private float scaleRate = 1.12f; 
     
     public bool shouldSpawn = false;
     public Enemy groundEnemy;
@@ -47,7 +46,7 @@ public class RandomEnemySpawn : MonoBehaviour
     {
         if (!shouldSpawn || player == null) return;
         Debug.Log("get this: TIME TO RAMP IT UP!");
-        GroundEnemyCap = Mathf.RoundToInt(scaleRate * GroundEnemyCap);
+        GroundEnemyCap = Mathf.RoundToInt(1.13f * GroundEnemyCap);
         GroundEnemyCounter = 0;
     }
 
