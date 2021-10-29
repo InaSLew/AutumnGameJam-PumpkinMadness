@@ -11248,6 +11248,7 @@ MonoBehaviour:
   scaleRate: 1
   groundEnemy: {fileID: -5004454507121452738, guid: eb06f71367cd44e46b6fd5df06aabdfb, type: 3}
   flyingEnemy: {fileID: 8924721309400034330, guid: a48659bb504cf12469611e575bf109d1, type: 3}
+  PumpkinWallSpawnOffset: -3
 --- !u!1 &337279808
 GameObject:
   m_ObjectHideFlags: 0
