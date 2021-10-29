@@ -28,6 +28,8 @@ public class PlayerAttack : MonoBehaviour
         
         if (other.gameObject.CompareTag("Player"))
         {
+            if (weaponThrown && throwIteration < totalFramesToMoveAway)
+            transform.position = transform.parent.position;
             weaponThrown = false;
             throwIteration = 0;
         }

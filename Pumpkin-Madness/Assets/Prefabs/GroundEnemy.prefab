@@ -191,7 +191,7 @@ MonoBehaviour:
   MaxHealth: 10
   DamagePower: 25
   regularSprite: {fileID: 21300000, guid: 789455fed018bce42b3f72b69b3ed5c5, type: 3}
-  damageTakenSprite: {fileID: 21300000, guid: 39b3c94e7c751a647b7d281b83b20d62, type: 3}
+  damageTakenSprite: {fileID: 21300000, guid: 1b279f56cab98f24aaec278ae7325c4f, type: 3}
   invulnerabilityTime: 0.5
   redFlashDuration: 0.25
 --- !u!58 &297824958965985771
