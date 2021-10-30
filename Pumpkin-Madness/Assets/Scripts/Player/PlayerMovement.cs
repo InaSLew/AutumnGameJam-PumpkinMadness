@@ -16,6 +16,8 @@ public class PlayerMovement : MonoBehaviour
     public Sprite defaultSkin;
     public Sprite jumpingSkin;
     public AudioSource audioSource;
+    public AudioSource audioSource2;
+
 
     void Update()
     {
@@ -26,6 +28,7 @@ public class PlayerMovement : MonoBehaviour
         
         if (Input.GetButtonDown("Jump"))
         {
+            audioSource2.Play();
             jump = true;
             animator.enabled = false;
         }
@@ -73,6 +76,7 @@ public class PlayerMovement : MonoBehaviour
 
         if (grounded != true)
         {
+            
             audioSource.Pause();
             animator.enabled = false;
             spriteRenderer.sprite = jumpingSkin;

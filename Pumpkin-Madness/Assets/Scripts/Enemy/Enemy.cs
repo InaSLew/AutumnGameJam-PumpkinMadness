@@ -14,6 +14,9 @@ public class Enemy : Unit
     private ScoreCounterUI scoreCounterUI;
     
     private GameObject player;
+    public AudioSource audioSource;
+    public AudioSource audioSource2;
+
     
 
     [SerializeField] private Material deathParticle;
@@ -27,6 +30,7 @@ public class Enemy : Unit
 
         psr.material = deathParticle;
         ps.Play();
+        audioSource2.Play();
     }
 
 
@@ -35,6 +39,9 @@ public class Enemy : Unit
     {      
         ps = GameObject.Find("PlayerWeapon").GetComponent<ParticleSystem>();
         psr = GameObject.Find("PlayerWeapon").GetComponent<ParticleSystemRenderer>();
+        audioSource = GetComponent<AudioSource>();
+        audioSource2 = GameObject.Find("PlayerWeapon").GetComponent<AudioSource>();
+        audioSource.Pause();
         
         
         player = GameObject.FindGameObjectWithTag("Player");        
@@ -69,8 +76,9 @@ public class Enemy : Unit
     
     public override void TakeDamage(int value)
     {
+        audioSource.Play();
         base.TakeDamage(value);
-        
+
         if (IsDead)
         {
             ScoreCounterUI.instance.AddKill();
