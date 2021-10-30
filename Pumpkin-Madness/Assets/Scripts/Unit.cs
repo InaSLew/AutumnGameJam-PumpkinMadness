@@ -15,7 +15,7 @@ public abstract class Unit : MonoBehaviour
     
     private SpriteRenderer spriteRenderer;
     private bool isInvulnerable;
-    
+    public AudioSource audioSource2;
     
     protected Unit()
     {
@@ -27,7 +27,7 @@ public abstract class Unit : MonoBehaviour
     {
         health = MaxHealth;
         spriteRenderer = GetComponentInChildren<SpriteRenderer>();
-
+        audioSource2 = GameObject.Find("PlayerWeapon").GetComponent<AudioSource>();
     }
 
     
@@ -54,7 +54,7 @@ public abstract class Unit : MonoBehaviour
     {
         if (!isInvulnerable)
         {
-
+            audioSource2.Play();
 
             Health -= value;
             isInvulnerable = true;
