@@ -28,7 +28,6 @@ public class PlayerMovement : MonoBehaviour
         
         if (Input.GetButtonDown("Jump"))
         {
-            audioSource2.Play();
             jump = true;
             animator.enabled = false;
         }

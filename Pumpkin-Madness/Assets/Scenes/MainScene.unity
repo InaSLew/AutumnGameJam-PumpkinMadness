@@ -7268,7 +7268,7 @@ MonoBehaviour:
   defaultSkin: {fileID: 21300000, guid: 26edfe4031737b147bba09808a68296d, type: 3}
   jumpingSkin: {fileID: 21300000, guid: 26ea900d5175e96459623e684ba2a134, type: 3}
   audioSource: {fileID: 454136428}
-  audioSource2: {fileID: 454136429}
+  audioSource2: {fileID: 0}
 --- !u!114 &454136420
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7291,6 +7291,7 @@ MonoBehaviour:
   m_GroundCheck: {fileID: 936141706}
   m_CeilingCheck: {fileID: 1081029717}
   m_CrouchDisableCollider: {fileID: 0}
+  audioSource2: {fileID: 454136429}
   m_Grounded: 0
   OnLandEvent:
     m_PersistentCalls:
@@ -7641,7 +7642,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 5331845809179872078, guid: 14c4dcfb27b2c204da4b6c9b5e4ccc23, type: 2}
   m_audioClip: {fileID: 8300000, guid: 94bed23259013bf4c9deba6fb892e066, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.744
   m_Pitch: 1
   Loop: 0
   Mute: 0
