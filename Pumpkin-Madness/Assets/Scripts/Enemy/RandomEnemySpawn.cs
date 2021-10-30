@@ -113,14 +113,15 @@ public class RandomEnemySpawn : MonoBehaviour
 
     private Vector3 GetSpawnPositionFromWall()
     {
+        // NOTE
+        // Will clean this up after presentation, promise
+        Vector3 result;
         var index = Random.Range(0, 2);
-        var targetSpawn = spawnWalls[index];
-        var targetBound = targetSpawn.GetComponent<SpriteRenderer>().bounds;
-        var positionX = targetSpawn.transform.position.x;
-        var y = Random.Range(0, targetBound.size.y / 3);
-        return new Vector3(GetPositionXWithOffset(index, positionX), y, 0);
+        if (index == 0) result =  new Vector3(-23f, 7f, 0);
+        else result = new Vector3(19f, 7f, 0);
+        return result;
     }
 
     private float GetPositionXWithOffset(int wallIndex, float position) =>
-        wallIndex == 0 ? position + PumpkinWallSpawnOffset : position - PumpkinWallSpawnOffset;
+        wallIndex == 0 ? position - PumpkinWallSpawnOffset : position + PumpkinWallSpawnOffset;
 }

@@ -6294,7 +6294,7 @@ GameObject:
   - component: {fileID: 286608058}
   m_Layer: 3
   m_Name: PumpwallV2 (2)
-  m_TagString: SpawnWall
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6871,7 +6871,7 @@ MonoBehaviour:
   ExtraFlyEnemyPer1Minute: 2
   groundEnemy: {fileID: -5004454507121452738, guid: eb06f71367cd44e46b6fd5df06aabdfb, type: 3}
   flyingEnemy: {fileID: 8924721309400034330, guid: a48659bb504cf12469611e575bf109d1, type: 3}
-  PumpkinWallSpawnOffset: 4
+  PumpkinWallSpawnOffset: 8
 --- !u!1 &337279808
 GameObject:
   m_ObjectHideFlags: 0
@@ -7282,7 +7282,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_JumpForce: 600
-  m_CrouchSpeed: 0.45
   m_MovementSmoothing: 0.05
   m_AirControl: 1
   m_WhatIsGround:
@@ -36072,7 +36071,7 @@ GameObject:
   - component: {fileID: 1234180149}
   m_Layer: 3
   m_Name: PumpwallV2 (3)
-  m_TagString: SpawnWall
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
