@@ -1,47 +1,19 @@
-# Game jam brain storm notes
+# Night of the Mutant Pumpkins
 
-## Objective
-> Player is to try to survive for as long as they can manage
+- Autumn game jam of Forsbergs skola (27/10 - 29/30)
+- The game is a medium fast-paced single player platformer survival game
 
-## Main game loop
+## Group members
+In alphabetical order:
 
-- enemy spawn
-- survive through attacking or dodging
-- repeat
+- [Harry](https://github.com/HarryTheHeath)
+- [Ina](https://github.com/InaSLew)
+- [Johannes](https://github.com/MustoLini)
+- [Max](https://github.com/MaxDKCrab)
+- [Oskar](https://github.com/Zargn)
+- [Sear](https://github.com/SearWaizy)
 
-- Slow in the beginning then the intensity increases (with interval of some sort to be decided later)
+## Special thanks to Rafael Wolde Selassie and Edvin Hammarström for making the music
 
-## Must-haves
-- Level (environment) [MaxDKCrab]() & [SearWaizy]()
-    - Platform (ie jumping)
-    - Screen scale -> to be decided later
-
-- Enemy spawn system
-    - two types of enemy [zargn]()
-        - smaller (less hp) (1 stab)
-        - bigger (vice versa) (2 stabs)
-    - health
-    - track the player down [InaSLew]()
-
-- Player movements
-    - health (health bar) (max health to be decided later) [Multolini]()
-    - moving left and right and jump! [HarryTheHeath]()
-    - A melee with range (knife with one stab)
-    - Player takes dmg: cooldown after taking damage [Mustolini]()
-
-- Enemy movements [Zargn]() & [InaSLew]()
-    - walking
-    - jumping
-
-- Combat/damage system
-- Timer (to show how long player's survived)
-- Death
-- Difficulty fine tuning/balancing
-    - player max health
-    - enemy spawn speed
-    - attack damage
-
-## Nice-to-haves
-
-## Extra-extra-extra-bits
-
+## Demo
+[click here](https://play.unity.com/mg/other/night-of-the-mutant-pumpkins)
