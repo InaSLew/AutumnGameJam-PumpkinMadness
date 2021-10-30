@@ -1,6 +1,6 @@
 # Night of the Mutant Pumpkins
 
-- Autumn game jam of Forsbergs skola (27/10/2021 - 29/30/2021)
+- Autumn game jam of Forsbergs skola (27/10/2021 - 29/0/2021)
 - The game is a medium fast-paced single player platformer survival game
 
 ## Group members
