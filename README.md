@@ -13,7 +13,7 @@ In alphabetical order:
 - [Oskar](https://github.com/Zargn)
 - [Sear](https://github.com/SearWaizy)
 
-## Special thanks to Rafael Wolde Selassie and Edvin Hammarström for making the music
+✨Special thanks to Rafael Wolde Selassie and Edvin Hammarström for making the music✨
 
 ## Demo
 [click here](https://play.unity.com/mg/other/night-of-the-mutant-pumpkins)
